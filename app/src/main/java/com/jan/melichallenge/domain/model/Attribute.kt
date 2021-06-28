@@ -1,0 +1,11 @@
+package com.jan.melichallenge.domain.model
+
+data class Attribute(
+    val attributeGroupId: String,
+    val attributeGroupName: String,
+    val id: String,
+    val name: String,
+    val source: Int,
+    val valueId: String?,
+    val valueName: String,
+)

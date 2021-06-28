@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.jan.milichallenge"
+        applicationId "com.jan.melichallenge"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
