@@ -12,7 +12,7 @@ data class Transactions(
     val transactionPeriod: String,
 
     @Embedded
-    val ratings: Ratings,
+    val ratings: Rating,
 
     val total: Int
 )

@@ -10,7 +10,7 @@ data class Transactions(
     @SerializedName("period")
     val period: String,
     @SerializedName("ratings")
-    val ratings: Ratings,
+    val ratings: Rating,
     @SerializedName("total")
     val total: Int
 )

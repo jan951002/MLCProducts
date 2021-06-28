@@ -7,22 +7,23 @@ data class SellerAddress(
     @ColumnInfo(name = "address_line")
     val addressLine: String,
 
-    @Embedded
-    val city: City,
+    @ColumnInfo(name = "city_name")
+    val cityName: String,
 
     val comment: String,
 
-    @Embedded
-    val country: Country,
+    @ColumnInfo(name = "country_name")
+    val countryName: String,
 
+    @ColumnInfo(name = "seller_address_id")
     val sellerAddressId: String,
 
     val latitude: String,
 
     val longitude: String,
 
-    @Embedded
-    val state: State,
+    @ColumnInfo(name = "state_name")
+    val stateName: String,
 
     @ColumnInfo(name = "zip_code")
     val zipCode: String

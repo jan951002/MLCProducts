@@ -2,12 +2,12 @@ package com.jan.milichallenge.domain.model
 
 data class SellerAddress(
     val addressLine: String,
-    val city: Location,
+    val cityName: String,
     val comment: String,
-    val country: Location,
+    val countryName: String,
     val id: String,
     val latitude: String,
     val longitude: String,
-    val state: Location,
+    val stateName: String,
     val zipCode: String
 )

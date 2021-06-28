@@ -23,5 +23,6 @@ data class Seller(
     val sellerReputation: SellerReputation,
 
     @TypeConverters(DataListStringConverter::class)
+    @ColumnInfo(name = "seller_tags")
     val sellerTags: List<String>
 )
