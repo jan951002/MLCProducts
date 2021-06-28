@@ -1,5 +1,10 @@
 package com.jan.melichallenge.config
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
+
+typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
+
 typealias AttributeRoom = com.jan.melichallenge.data.database.model.Attribute
 typealias AttributeResponse = com.jan.melichallenge.data.api.response.Attribute
 

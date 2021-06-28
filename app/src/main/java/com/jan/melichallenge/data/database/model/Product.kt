@@ -55,11 +55,8 @@ data class Product(
     @ColumnInfo(name = "price")
     val price: Int,
 
-    @Embedded
-    val seller: Seller,
-
-    @Embedded
-    val sellerAddress: SellerAddress,
+    @ColumnInfo(name = "seller_id")
+    val sellerId: Long,
 
     @ColumnInfo(name = "site_id")
     val siteId: String,

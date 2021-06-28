@@ -1,15 +1,15 @@
 package com.jan.melichallenge.data.database.model
 
-import androidx.room.ColumnInfo
-import androidx.room.Embedded
-import androidx.room.TypeConverters
+import androidx.room.*
 import com.jan.melichallenge.data.database.converter.DataListStringConverter
 
+@Entity(tableName = "seller")
 data class Seller(
+    @PrimaryKey
+    val id: Long,
+
     @ColumnInfo(name = "car_dealer")
     val carDealer: Boolean,
-
-    val sellerId: Long,
 
     val sellerPermalink: String,
 
@@ -24,5 +24,8 @@ data class Seller(
 
     @TypeConverters(DataListStringConverter::class)
     @ColumnInfo(name = "seller_tags")
-    val sellerTags: List<String>
+    val sellerTags: List<String>,
+
+    @Embedded
+    val address: SellerAddress? = null
 )

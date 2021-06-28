@@ -16,7 +16,7 @@ fun SellerResponse.toSellerDomain() = Seller(
 
 fun SellerRoom.toSellerDomain() = Seller(
     carDealer = this.carDealer,
-    id = this.sellerId,
+    id = this.id,
     permalink = this.sellerPermalink,
     realEstateAgency = this.realEstateAgency,
     registrationDate = this.registrationDate,
@@ -26,7 +26,7 @@ fun SellerRoom.toSellerDomain() = Seller(
 
 fun Seller.toSellerRoom() = SellerRoom(
     carDealer = this.carDealer,
-    sellerId = this.id,
+    id = this.id,
     sellerPermalink = this.permalink,
     realEstateAgency = this.realEstateAgency,
     registrationDate = this.registrationDate,
