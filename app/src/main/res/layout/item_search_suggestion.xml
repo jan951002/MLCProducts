@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="search"
+            type="com.jan.melichallenge.domain.model.Search" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_vertical_margin">
+
+        <ImageView
+            android:id="@+id/searchAutocompleteImage"
+            style="@style/Theme.MILIChallenge.BackIconTint"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_auto_complete" />
+
+        <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+            android:id="@+id/materialTextView"
+            style="@style/Theme.MILIChallenge.TextContentStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_clock"
+            android:gravity="center_vertical"
+            android:text="@{search.query}"
+            app:layout_constraintBottom_toBottomOf="@+id/searchAutocompleteImage"
+            app:layout_constraintEnd_toStartOf="@+id/searchAutocompleteImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/searchAutocompleteImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

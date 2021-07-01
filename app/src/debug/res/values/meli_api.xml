@@ -1,0 +1,3 @@
+<resources>
+    <string name="meli_api_base_url" templateMergeStrategy="preserve" translatable="false">https://api.mercadolibre.com/sites/MLA/</string>
+</resources>

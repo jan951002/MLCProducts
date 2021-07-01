@@ -1,4 +1,4 @@
-package com.jan.milichallenge
+package com.jan.melichallenge
 
 import org.junit.Test
 
