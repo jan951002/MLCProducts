@@ -17,6 +17,8 @@ typealias ProductRoom = com.jan.melichallenge.data.database.model.Product
 typealias RatingsResponse = com.jan.melichallenge.data.api.response.Rating
 typealias RatingsRoom = com.jan.melichallenge.data.database.model.Rating
 
+typealias SearchRoom = com.jan.melichallenge.data.database.model.Search
+
 typealias SellerResponse = com.jan.melichallenge.data.api.response.Seller
 typealias SellerRoom = com.jan.melichallenge.data.database.model.Seller
 

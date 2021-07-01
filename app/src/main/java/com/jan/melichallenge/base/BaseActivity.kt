@@ -24,6 +24,7 @@ abstract class BaseActivity<Binding : ViewBinding>(private val inflate: Inflate<
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = DataBindingUtil.setContentView(this, layoutRes())
+        _binding = DataBindingUtil.inflate(layoutInflater, layoutRes(), null, false)
+        setContentView(_binding.root)
     }
 }

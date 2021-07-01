@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MELIChallenge</string>
+    <string name="lab_search">Buscar</string>
+    <string name="lab_search_suggestion">¡Busca y descubre todos los productos que tenemos para ti!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

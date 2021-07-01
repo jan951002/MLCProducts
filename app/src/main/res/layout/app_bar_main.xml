@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/mainAppBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/content_horizontal_margin"
+            android:theme="@style/Theme.MILIChallenge.AppBarOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mainToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:paddingVertical="@dimen/item_vertical_margin"
+                app:contentInsetStart="0dp"
+                app:popupTheme="@style/Theme.MILIChallenge.PopupOverlay">
+
+                <EditText
+                    android:id="@+id/mainSearchEdit"
+                    style="@style/Theme.MILIChallenge.TextImportantStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner_toggle"
+                    android:drawableStart="@drawable/ic_manage_search"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/lab_search"
+                    android:paddingHorizontal="@dimen/item_horizontal_double_margin"
+                    android:paddingVertical="@dimen/item_vertical_margin"
+                    android:autofillHints="@string/lab_search" />
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+            layout="@layout/content_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/mainAppBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainAppBar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
