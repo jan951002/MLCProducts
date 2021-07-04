@@ -30,11 +30,11 @@ class ProductsViewModel(
 
     init {
         viewModelScope.launch {
-            offset.collect { findProducts(offset = it) }
+            offset.collect { searchProducts(offset = it) }
         }
     }
 
-    suspend fun findProducts(isNewQuery: Boolean = false, offset: Int) {
+    suspend fun searchProducts(isNewQuery: Boolean = false, offset: Int) {
         when (val result = productListUseCase.invoke(query, offset)) {
             is BaseUseCaseResult.Success -> {
                 result.data?.let { productList ->

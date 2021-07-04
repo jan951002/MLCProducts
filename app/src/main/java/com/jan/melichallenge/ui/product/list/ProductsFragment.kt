@@ -33,7 +33,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
 
     fun findProducts(query: String) {
         productsViewModel.query = query
-        productsViewModel.viewModelScope.launch { productsViewModel.findProducts(true, 0) }
+        productsViewModel.viewModelScope.launch { productsViewModel.searchProducts(true, 0) }
     }
 
     private fun configScroll() {
@@ -42,8 +42,11 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 val lastVisiblePosition = layoutManager.findLastVisibleItemPosition()
-                if (lastVisiblePosition != 0 && (lastVisiblePosition + 1) % 50 == 0)
-                    productsViewModel.offset.value = lastVisiblePosition + 1
+                if (lastVisiblePosition != 0
+                    && (lastVisiblePosition + 1) == layoutManager.itemCount
+                ) {
+                    productsViewModel.offset.value = layoutManager.itemCount + 1
+                }
             }
         })
     }

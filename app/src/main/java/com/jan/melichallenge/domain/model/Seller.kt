@@ -3,9 +3,9 @@ package com.jan.melichallenge.domain.model
 data class Seller(
     val carDealer: Boolean,
     val id: Long,
-    val permalink: String,
+    val permalink: String?,
     val realEstateAgency: Boolean,
-    val registrationDate: String,
-    val sellerReputation: SellerReputation,
-    val tags: List<String>
+    val registrationDate: String?,
+    val sellerReputation: SellerReputation?,
+    val tags: List<String>?
 )

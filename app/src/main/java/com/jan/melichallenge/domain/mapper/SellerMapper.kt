@@ -9,6 +9,6 @@ fun SellerResponse.toSellerDomain() = Seller(
     permalink = this.permalink,
     realEstateAgency = this.realEstateAgency,
     registrationDate = this.registrationDate,
-    sellerReputation = this.sellerReputation.toSellerReputationDomain(),
+    sellerReputation = this.sellerReputation?.toSellerReputationDomain(),
     tags = this.tags
 )
