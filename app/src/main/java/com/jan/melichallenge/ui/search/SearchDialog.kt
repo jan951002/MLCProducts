@@ -30,6 +30,7 @@ class SearchDialog(context: Context, private val onSearchPressed: OnSearchPresse
 
     override fun onStart() {
         super.onStart()
+        searchSuggestionsAdapter.submitList(searchSuggestions)
         binding.searchSuggestionsRecycler.adapter = searchSuggestionsAdapter
     }
 

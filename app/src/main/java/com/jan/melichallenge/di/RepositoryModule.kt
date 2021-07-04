@@ -15,27 +15,24 @@ import org.koin.dsl.module
 
 val repositoryModule = module {
 
-    factory {
+    single {
         provideProductRepository(
-            searchLocalDataSource = get(),
             productRemoteDataSource = get()
         )
     }
 
-    factory {
+    single {
         provideSearchRepository(searchLocalDataSource = get())
     }
 }
 
 /**
  *  function to build our ProductRepository
- *  @param searchLocalDataSource
  *  @param productRemoteDataSource
  */
 fun provideProductRepository(
-    searchLocalDataSource: SearchLocalDataSource,
     productRemoteDataSource: ProductRemoteDataSource
-): ProductRepository = ProductRepositoryImpl(searchLocalDataSource, productRemoteDataSource)
+): ProductRepository = ProductRepositoryImpl(productRemoteDataSource)
 
 /**
  *  function to build our SearchRepository

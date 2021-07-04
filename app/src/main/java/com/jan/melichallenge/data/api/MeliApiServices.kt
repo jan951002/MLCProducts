@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface MeliApiServices {
 
-    @GET("MLA/search")
+    @GET("search")
     suspend fun searchProducts(
         @Query("q") query: String, @Query("offset") offset: Int
     ): SearchProductsResponse

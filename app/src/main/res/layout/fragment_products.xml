@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/content_horizontal_margin"
         android:paddingVertical="@dimen/content_vertical_margin"
-        tools:context=".ui.search.SearchFragment">
+        tools:context=".ui.product.list.ProductsFragment">
 
         <include
             layout="@layout/content_search_suggestions"
@@ -22,6 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productsRecycler"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

@@ -35,7 +35,7 @@ data class Product(
     @SerializedName("permalink")
     val permalink: String,
     @SerializedName("price")
-    val price: Int,
+    val price: Double,
     @SerializedName("seller")
     val seller: Seller,
     @SerializedName("seller_address")

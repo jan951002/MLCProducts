@@ -5,7 +5,7 @@ data class Attribute(
     val attributeGroupName: String,
     val id: String,
     val name: String,
-    val source: Int,
+    val source: Long,
     val valueId: String?,
     val valueName: String,
 )

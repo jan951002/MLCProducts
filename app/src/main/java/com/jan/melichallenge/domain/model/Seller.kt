@@ -7,6 +7,5 @@ data class Seller(
     val realEstateAgency: Boolean,
     val registrationDate: String,
     val sellerReputation: SellerReputation,
-    val tags: List<String>,
-    val address: SellerAddress? = null,
+    val tags: List<String>
 )

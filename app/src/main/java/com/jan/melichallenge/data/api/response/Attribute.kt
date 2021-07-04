@@ -13,7 +13,7 @@ data class Attribute(
     @SerializedName("name")
     val name: String,
     @SerializedName("source")
-    val source: Int,
+    val source: Long,
     @SerializedName("value_id")
     val valueId: String?,
     @SerializedName("value_name")
