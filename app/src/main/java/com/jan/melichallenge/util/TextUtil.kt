@@ -3,6 +3,8 @@ package com.jan.melichallenge.util
 import android.content.Context
 import android.graphics.Typeface
 import android.widget.EditText
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import java.util.*
 
 object TextUtil {
@@ -24,5 +26,11 @@ object TextUtil {
             }
             false
         }
+    }
+
+    fun Double.formatPrice(currency: String): String {
+        val format = DecimalFormat("#,###")
+        format.maximumFractionDigits = 0
+        return "$${format.format(this)} $currency"
     }
 }

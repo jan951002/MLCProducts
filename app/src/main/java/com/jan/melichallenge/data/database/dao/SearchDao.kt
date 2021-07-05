@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface SearchDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(search: Search)
+    suspend fun save(search: Search)
 
     @Query("SELECT * FROM searches ORDER BY time DESC")
     fun getLastSearches(): Flow<List<Search>>

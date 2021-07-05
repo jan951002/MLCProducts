@@ -27,15 +27,15 @@ data class Product(
     @SerializedName("id")
     val id: String,
     @SerializedName("installments")
-    val installments: Installment,
+    val installments: Installment?,
     @SerializedName("listing_type_id")
     val listingTypeId: String,
     @SerializedName("order_backend")
     val orderBackend: Int,
     @SerializedName("permalink")
-    val permalink: String,
+    val permalink: String?,
     @SerializedName("price")
-    val price: Int,
+    val price: Double,
     @SerializedName("seller")
     val seller: Seller,
     @SerializedName("seller_address")
@@ -47,7 +47,7 @@ data class Product(
     @SerializedName("stop_time")
     val stopTime: String,
     @SerializedName("tags")
-    val tags: List<String>,
+    val tags: List<String>?,
     @SerializedName("thumbnail")
     val thumbnail: String,
     @SerializedName("thumbnail_id")

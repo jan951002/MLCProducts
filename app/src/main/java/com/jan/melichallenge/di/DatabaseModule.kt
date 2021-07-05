@@ -17,8 +17,6 @@ val databaseModule = module {
 
     single { provideMeliDatabase(androidApplication()) }
 
-    single { provideProductDao(meliDatabase = get()) }
-
     single { provideSearchDao(meliDatabase = get()) }
 
     single { provideSearchLocalDataSource(searchDao = get()) }
@@ -32,12 +30,6 @@ fun provideMeliDatabase(application: Application): MeliDatabase =
     Room.databaseBuilder(application, MeliDatabase::class.java, "meli-db")
         .fallbackToDestructiveMigration()
         .build()
-
-/**
- *  function to build our ProductDao
- *  @param meliDatabase
- */
-fun provideProductDao(meliDatabase: MeliDatabase) = meliDatabase.productDao
 
 /**
  *  function to build our SearchDao
