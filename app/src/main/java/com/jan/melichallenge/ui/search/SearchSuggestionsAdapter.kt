@@ -28,12 +28,14 @@ class SearchSuggestionsAdapter(private val listener: OnItemClickListener) :
         fun bind(search: Search) {
             binding.search = search
             binding.searchAutocompleteImage.setOnClickListener { listener.onAutocompleteText(search) }
+            itemView.setOnClickListener { listener.onSelectText(search) }
         }
     }
 
     interface OnItemClickListener {
 
         fun onAutocompleteText(search: Search)
+        fun onSelectText(search: Search)
     }
 
     companion object {

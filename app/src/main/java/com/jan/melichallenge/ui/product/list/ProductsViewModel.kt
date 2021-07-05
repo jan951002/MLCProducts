@@ -19,18 +19,24 @@ class ProductsViewModel(
     private val saveSearchUseCase: SaveSearchUseCase
 ) : AndroidViewModel(application) {
 
+    companion object {
+        const val NEW_SEARCH = 0
+        const val SEARCHED = 1
+        const val NOT_FOUND = 2
+        const val GENERAL_ERROR = 3
+        const val NETWORK_ERROR = 4
+    }
+
     var query = ""
     private val _products = MutableLiveData<List<Product>>()
     val products: LiveData<List<Product>> get() = _products
-    private val _error = MutableLiveData<String>()
-    val error: LiveData<String> get() = _error
-    private val _info = MutableLiveData<String>()
-    val info: LiveData<String> get() = _info
+    private val _searchState = MutableLiveData<Int>().apply { value = NEW_SEARCH }
+    val searchState: LiveData<Int> get() = _searchState
     val offset = MutableStateFlow(0)
 
     init {
         viewModelScope.launch {
-            offset.collect { searchProducts(offset = it) }
+            offset.collect { if (it != 0) searchProducts(offset = it) }
         }
     }
 
@@ -39,8 +45,13 @@ class ProductsViewModel(
             is BaseUseCaseResult.Success -> {
                 result.data?.let { productList ->
                     if (isNewQuery) {
-                        saveSearchUseCase.invoke(query)
-                        _products.value = productList
+                        if (productList.isNotEmpty()) {
+                            _searchState.value = SEARCHED
+                            saveSearchUseCase.invoke(query)
+                            _products.value = productList
+                        } else {
+                            _searchState.value = NOT_FOUND
+                        }
                     } else {
                         val newList = products.value?.toMutableList()
                         newList?.addAll(productList)
@@ -50,9 +61,11 @@ class ProductsViewModel(
             }
 
             is BaseUseCaseResult.Error -> {
+                _searchState.value = GENERAL_ERROR
             }
 
             is BaseUseCaseResult.NetworkError -> {
+                _searchState.value = NETWORK_ERROR
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.jan.melichallenge.ui.product.list
 
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
