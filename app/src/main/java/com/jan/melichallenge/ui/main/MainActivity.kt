@@ -1,6 +1,7 @@
 package com.jan.melichallenge.ui.main
 
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.jan.melichallenge.R
@@ -27,6 +28,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
         configSearchListener()
         observableViewModel()
+        binding.mainAppBar.mainBackButton.setOnClickListener { super.onBackPressed() }
     }
 
     private fun observableViewModel() {
@@ -48,6 +50,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                     (it as ProductsFragment).findProducts(query)
                 }
             }
+        }
+    }
+
+    fun configAppBar(isMainFragment: Boolean, text: String) {
+        if (isMainFragment) {
+            binding.mainAppBar.mainSearchEdit.visibility = View.VISIBLE
+            binding.mainAppBar.mainTitleText.visibility = View.GONE
+            binding.mainAppBar.mainBackButton.visibility = View.GONE
+        } else {
+            binding.mainAppBar.mainTitleText.text = text
+            binding.mainAppBar.mainSearchEdit.visibility = View.GONE
+            binding.mainAppBar.mainTitleText.visibility = View.VISIBLE
+            binding.mainAppBar.mainBackButton.visibility = View.VISIBLE
         }
     }
 }

@@ -25,19 +25,46 @@
                 app:contentInsetStart="0dp"
                 app:popupTheme="@style/Theme.MILIChallenge.PopupOverlay">
 
-                <EditText
-                    android:id="@+id/mainSearchEdit"
-                    style="@style/Theme.MILIChallenge.TextImportantStyle"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/round_corner_toggle"
-                    android:drawableStart="@drawable/ic_manage_search"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:hint="@string/lab_search"
-                    android:paddingHorizontal="@dimen/item_horizontal_double_margin"
-                    android:paddingVertical="@dimen/item_vertical_margin"
-                    android:autofillHints="@string/lab_search" />
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/mainSearchEdit"
+                        style="@style/Theme.MILIChallenge.TextImportantStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:autofillHints="@string/lab_search"
+                        android:background="@drawable/round_corner_toggle"
+                        android:drawableStart="@drawable/ic_manage_search"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/lab_search"
+                        android:inputType="text"
+                        android:paddingHorizontal="@dimen/item_horizontal_double_margin"
+                        android:paddingVertical="@dimen/item_vertical_margin"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/mainBackButton"
+                        android:layout_width="@dimen/big_icon_size"
+                        android:layout_height="@dimen/big_icon_size"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_arrow_back" />
+
+                    <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                        android:id="@+id/mainTitleText"
+                        style="@style/Theme.MILIChallenge.TextTitleStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/item_horizontal_margin"
+                        android:layout_toEndOf="@id/mainBackButton"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
 

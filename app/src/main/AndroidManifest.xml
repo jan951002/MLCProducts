@@ -15,12 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MILIChallenge.NoActionBar"
         android:usesCleartextTraffic="true">
-
-        <activity android:name="com.jan.melichallenge.ui.main.MainActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

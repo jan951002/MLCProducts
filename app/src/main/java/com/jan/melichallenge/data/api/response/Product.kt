@@ -11,25 +11,25 @@ data class Product(
     @SerializedName("available_quantity")
     val availableQuantity: Int,
     @SerializedName("buying_mode")
-    val buyingMode: String,
+    val buyingMode: String?,
     @SerializedName("catalog_listing")
     val catalogListing: Boolean,
     @SerializedName("catalog_product_id")
-    val catalogProductId: String,
+    val catalogProductId: String?,
     @SerializedName("category_id")
-    val categoryId: String,
+    val categoryId: String?,
     @SerializedName("condition")
-    val condition: String,
+    val condition: String?,
     @SerializedName("currency_id")
-    val currencyId: String,
+    val currencyId: String?,
     @SerializedName("domain_id")
-    val domainId: String,
+    val domainId: String?,
     @SerializedName("id")
-    val id: String,
+    val id: String?,
     @SerializedName("installments")
     val installments: Installment?,
     @SerializedName("listing_type_id")
-    val listingTypeId: String,
+    val listingTypeId: String?,
     @SerializedName("order_backend")
     val orderBackend: Int,
     @SerializedName("permalink")
@@ -41,19 +41,19 @@ data class Product(
     @SerializedName("seller_address")
     val sellerAddress: SellerAddress,
     @SerializedName("site_id")
-    val siteId: String,
+    val siteId: String?,
     @SerializedName("sold_quantity")
     val soldQuantity: Int,
     @SerializedName("stop_time")
-    val stopTime: String,
+    val stopTime: String?,
     @SerializedName("tags")
     val tags: List<String>?,
     @SerializedName("thumbnail")
-    val thumbnail: String,
+    val thumbnail: String?,
     @SerializedName("thumbnail_id")
-    val thumbnailId: String,
+    val thumbnailId: String?,
     @SerializedName("title")
-    val title: String,
+    val title: String?,
     @SerializedName("use_thumbnail_id")
     val useThumbnailId: Boolean
 )

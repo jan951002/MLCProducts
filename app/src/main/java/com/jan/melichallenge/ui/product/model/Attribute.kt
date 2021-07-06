@@ -1,4 +1,6 @@
-package com.jan.melichallenge.domain.model
+package com.jan.melichallenge.ui.product.model
+
+import java.io.Serializable
 
 data class Attribute(
     val attributeGroupId: String?,
@@ -8,4 +10,4 @@ data class Attribute(
     val source: Long,
     val valueId: String?,
     val valueName: String?,
-)
+) : Serializable

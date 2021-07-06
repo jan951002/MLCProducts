@@ -25,6 +25,7 @@ class ProductsViewModel(
         const val NOT_FOUND = 2
         const val GENERAL_ERROR = 3
         const val NETWORK_ERROR = 4
+        const val LOADING = 5
     }
 
     var query = ""
@@ -41,6 +42,8 @@ class ProductsViewModel(
     }
 
     suspend fun searchProducts(isNewQuery: Boolean = false, offset: Int) {
+        if (isNewQuery)
+            _searchState.value = LOADING
         when (val result = productListUseCase.invoke(query, offset)) {
             is BaseUseCaseResult.Success -> {
                 result.data?.let { productList ->

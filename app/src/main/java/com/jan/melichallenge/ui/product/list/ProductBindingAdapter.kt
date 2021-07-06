@@ -1,6 +1,5 @@
 package com.jan.melichallenge.ui.product.list
 
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -10,7 +9,7 @@ import com.jan.melichallenge.util.TextUtil.formatPrice
 
 @BindingAdapter("productImage")
 fun ImageView.setProductImage(product: Product) {
-    loadUrl(product.thumbnail)
+    loadUrl(product.thumbnail ?: "")
 }
 
 @BindingAdapter("productTitle")
@@ -20,5 +19,6 @@ fun TextView.setProductTitle(product: Product) {
 
 @BindingAdapter("productPrice")
 fun TextView.setProductPrice(product: Product) {
-    text = product.price.formatPrice(product.currencyId)
+    val price = product.price.formatPrice(product.currencyId ?: "")
+    text = price
 }
