@@ -1,4 +1,4 @@
-package com.jan.melichallenge.domain.model
+package com.jan.melichallenge.ui.product.model
 
 import java.io.Serializable
 

@@ -4,16 +4,18 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jan.melichallenge.R
 import com.jan.melichallenge.base.BaseFragment
 import com.jan.melichallenge.databinding.FragmentProductsBinding
 import com.jan.melichallenge.domain.model.Product
+import com.jan.melichallenge.ui.main.MainActivity
+import com.jan.melichallenge.ui.product.mapper.toProductParcelable
 import com.jan.melichallenge.util.InternetUtil.isOnline
 import com.jan.melichallenge.util.LoadImageUtil.loadDrawable
-import com.jan.melichallenge.util.MessageUtil.showShortToastWithoutAction
-import com.jan.melichallenge.util.ToastyType
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -21,13 +23,20 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
 
     private val productsViewModel: ProductsViewModel by viewModel()
     private lateinit var productsAdapter: ProductsAdapter
+    private lateinit var navController: NavController
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         productsAdapter = ProductsAdapter { product -> onItemClick(product) }
         binding.productsRecycler.adapter = productsAdapter
+        navController = Navigation.findNavController(binding.root)
         observableViewModel()
         configScroll()
         configLayoutManager()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as MainActivity).configAppBar(true, "")
     }
 
     private fun observableViewModel() {
@@ -77,10 +86,12 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.productsSearchState.searchStateText.text =
                     getString(R.string.lab_search_suggestion)
                 binding.productsRecycler.visibility = View.GONE
+                binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
             ProductsViewModel.SEARCHED -> {
                 binding.productsRecycler.visibility = View.VISIBLE
+                binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.GONE
             }
             ProductsViewModel.NOT_FOUND -> {
@@ -90,6 +101,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.productsSearchState.searchStateText.text =
                     getString(R.string.lab_search_not_found)
                 binding.productsRecycler.visibility = View.GONE
+                binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
             ProductsViewModel.GENERAL_ERROR -> {
@@ -102,6 +114,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                     else
                         getString(R.string.lab_search_is_offline)
                 binding.productsRecycler.visibility = View.GONE
+                binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
             ProductsViewModel.NETWORK_ERROR -> {
@@ -115,12 +128,20 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                         getString(R.string.lab_search_is_offline)
                     }
                 binding.productsRecycler.visibility = View.GONE
+                binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.VISIBLE
+            }
+            ProductsViewModel.LOADING -> {
+                binding.productsRecycler.visibility = View.GONE
+                binding.loadingSpinKit.visibility = View.VISIBLE
+                binding.productsSearchState.root.visibility = View.GONE
             }
         }
     }
 
     private fun onItemClick(product: Product) {
-        requireContext().showShortToastWithoutAction(ToastyType.INFO, "Product: ${product.title}")
+        val direction =
+            ProductsFragmentDirections.actionNavProductsFragmentToNavProductDetailFragment(product.toProductParcelable())
+        navController.navigate(direction)
     }
 }

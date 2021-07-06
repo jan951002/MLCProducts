@@ -10,6 +10,7 @@ import com.jan.melichallenge.R
 object LoadImageUtil {
 
     fun ImageView.loadUrl(urlString: String) {
+
         Glide.with(context)
             .load(urlString)
             .diskCacheStrategy(DiskCacheStrategy.DATA)

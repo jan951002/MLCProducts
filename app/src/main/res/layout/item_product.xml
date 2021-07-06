@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/item_horizontal_margin"
-        card_view:cardElevation="3dp"
+        card_view:cardElevation="4dp"
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout

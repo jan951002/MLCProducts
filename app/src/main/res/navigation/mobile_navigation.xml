@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/nav_products_fragment"
         android:name="com.jan.melichallenge.ui.product.list.ProductsFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_nav_products_fragment_to_nav_product_detail_fragment"
+            app:destination="@id/nav_product_detail_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_product_detail_fragment"
+        android:name="com.jan.melichallenge.ui.product.detail.ProductDetailFragment">
+        <argument
+            android:name="product"
+            app:argType="com.jan.melichallenge.ui.product.model.Product" />
+    </fragment>
 </navigation>
