@@ -14,7 +14,6 @@ object LoadImageUtil {
         Glide.with(context)
             .load(urlString)
             .diskCacheStrategy(DiskCacheStrategy.DATA)
-            //.centerCrop()
             .placeholder(R.drawable.ic_place_holder)
             .into(this)
     }

@@ -4,8 +4,6 @@ import android.content.Context
 import android.graphics.Typeface
 import android.widget.EditText
 import java.text.DecimalFormat
-import java.text.NumberFormat
-import java.util.*
 
 object TextUtil {
     fun Context.fontRobotoLight(): Typeface? {
@@ -15,8 +13,6 @@ object TextUtil {
     fun Context.fontRobotoRegular(): Typeface? {
         return Typeface.createFromAsset(assets, "Roboto-Regular.ttf")
     }
-
-    fun String.customCapitalize() = this.toLowerCase(Locale.ROOT).capitalize(Locale.ROOT)
 
     fun EditText.clearFocusAfterDone(action: Int, actionListener: () -> Unit) {
         setOnEditorActionListener { _, actionId, _ ->

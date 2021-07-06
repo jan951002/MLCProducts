@@ -7,7 +7,7 @@ import com.jan.melichallenge.usecase.ProductListUseCase
 import com.jan.melichallenge.usecase.SaveSearchUseCase
 import com.jan.melichallenge.usecase.SearchListUseCase
 import org.koin.android.ext.koin.androidApplication
-import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 /**

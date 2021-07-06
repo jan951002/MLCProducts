@@ -1,7 +1,5 @@
 package com.jan.melichallenge.domain.model
 
-import java.io.Serializable
-
 data class Product(
     val acceptsMercadopago: Boolean,
     val attributes: List<Attribute>,
@@ -29,4 +27,4 @@ data class Product(
     val thumbnailId: String?,
     val title: String?,
     val useThumbnailId: Boolean
-) : Serializable
+)

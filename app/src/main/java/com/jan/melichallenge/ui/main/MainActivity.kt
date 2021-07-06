@@ -9,7 +9,7 @@ import com.jan.melichallenge.base.BaseActivity
 import com.jan.melichallenge.databinding.ActivityMainBinding
 import com.jan.melichallenge.ui.product.list.ProductsFragment
 import com.jan.melichallenge.ui.search.SearchDialog
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate),
     SearchDialog.OnSearchPressed {
