@@ -41,8 +41,7 @@ fun TextView.setProductDetailSellerURL(product: Product) {
 
 @BindingAdapter("productDetailSellerLocation")
 fun TextView.setProductDetailSellerLocation(product: Product) {
-    val location =
-        "${context.getString(R.string.lab_location)}: ${product.sellerAddress.city.name}, ${product.sellerAddress.country.name}"
+    val location = "${product.sellerAddress.city.name}, ${product.sellerAddress.country.name}"
     text = location
 }
 

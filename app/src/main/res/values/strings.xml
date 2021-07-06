@@ -11,6 +11,6 @@
     <string name="lab_price">Precio</string>
     <string name="lab_available_quantity">Unidades disponibles</string>
     <string name="lab_seller">Vendedor (a)</string>
-    <string name="lab_location">Ubicación</string>
     <string name="lab_product_detail">Detalle del producto</string>
+    <string name="lab_welcome">¡Bienvenido!</string>
 </resources>

@@ -15,7 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MILIChallenge.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.main.MainActivity">
+
+        <activity android:name=".ui.main.MainActivity" />
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
