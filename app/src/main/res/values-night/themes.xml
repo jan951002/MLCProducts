@@ -57,13 +57,6 @@
         <item name="android:drawablePadding">@dimen/drawable_margin</item>
     </style>
 
-    <style name="Theme.MILIChallenge.TextMinimumStyle">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">10sp</item>
-        <item name="android:drawableTint">@color/grayB0</item>
-        <item name="android:drawablePadding">@dimen/drawable_margin</item>
-    </style>
-
     <style name="Theme.MILIChallenge.TextContentStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14sp</item>

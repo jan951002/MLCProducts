@@ -5,9 +5,8 @@
     <dimen name="big_icon_size">35dp</dimen>
     <dimen name="item_vertical_double_margin">16dp</dimen>
     <dimen name="item_vertical_margin">8dp</dimen>
-    <dimen name="small_icon_size">20dp</dimen>
     <dimen name="item_horizontal_margin">8dp</dimen>
     <dimen name="image_item">170dp</dimen>
-    <dimen name="content_horizontal_double_margin">40dp</dimen>
     <dimen name="item_horizontal_double_margin">16dp</dimen>
+    <dimen name="drawable_margin">4dp</dimen>
 </resources>
