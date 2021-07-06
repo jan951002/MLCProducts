@@ -17,7 +17,7 @@ import com.jan.melichallenge.ui.product.mapper.toProductParcelable
 import com.jan.melichallenge.util.InternetUtil.isOnline
 import com.jan.melichallenge.util.LoadImageUtil.loadDrawable
 import kotlinx.coroutines.launch
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate) {
 
