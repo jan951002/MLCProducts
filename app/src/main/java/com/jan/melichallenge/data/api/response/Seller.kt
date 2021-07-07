@@ -9,13 +9,13 @@ data class Seller(
     @SerializedName("id")
     val id: Long,
     @SerializedName("permalink")
-    val permalink: String,
+    val permalink: String?,
     @SerializedName("real_estate_agency")
     val realEstateAgency: Boolean,
     @SerializedName("registration_date")
-    val registrationDate: String,
+    val registrationDate: String?,
     @SerializedName("seller_reputation")
-    val sellerReputation: SellerReputation,
+    val sellerReputation: SellerReputation?,
     @SerializedName("tags")
-    val tags: List<String>
+    val tags: List<String>?
 )

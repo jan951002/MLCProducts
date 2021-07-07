@@ -9,15 +9,15 @@ import kotlinx.coroutines.flow.map
 
 interface SearchLocalDataSource {
 
-    suspend fun insert(search: Search)
+    suspend fun save(search: Search)
 
     fun getLastSearches(): Flow<List<Search>>
 }
 
 class SearchLocalDataSourceImpl(private val searchDao: SearchDao) : SearchLocalDataSource {
 
-    override suspend fun insert(search: Search) {
-        searchDao.insert(search.toSearchRoom())
+    override suspend fun save(search: Search) {
+        searchDao.save(search.toSearchRoom())
     }
 
     override fun getLastSearches() =

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="attribute"
+            type="com.jan.melichallenge.domain.model.Attribute" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/Theme.MILIChallenge.TextContentStyle"
+            productDetailAttribute="@{attribute}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/item_horizontal_margin"
+            android:paddingVertical="@dimen/item_vertical_margin"
+            card_view:drawableTint="?colorSecondary"
+            card_view:drawableTopCompat="@drawable/ic_done_outline" />
+    </androidx.cardview.widget.CardView>
+</layout>

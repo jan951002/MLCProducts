@@ -1,7 +1,6 @@
 package com.jan.melichallenge.domain.mapper
 
 import com.jan.melichallenge.config.ProductResponse
-import com.jan.melichallenge.config.ProductRoom
 import com.jan.melichallenge.domain.model.Product
 
 fun ProductResponse.toProductDomain() = Product(
@@ -16,12 +15,12 @@ fun ProductResponse.toProductDomain() = Product(
     currencyId = this.currencyId,
     domainId = this.domainId,
     id = this.id,
-    installments = this.installments.toInstallmentDomain(),
+    installments = this.installments?.toInstallmentDomain(),
     listingTypeId = this.listingTypeId,
     orderBackend = this.orderBackend,
     permalink = this.permalink,
     price = this.price,
-    sellerId = this.seller.id,
+    seller = this.seller.toSellerDomain(),
     siteId = this.siteId,
     soldQuantity = this.soldQuantity,
     stopTime = this.stopTime,
@@ -29,61 +28,6 @@ fun ProductResponse.toProductDomain() = Product(
     thumbnail = this.thumbnail,
     thumbnailId = this.thumbnailId,
     title = this.title,
-    useThumbnailId = this.useThumbnailId
-)
-
-fun ProductRoom.toProductDomain() = Product(
-    acceptsMercadopago = this.acceptsMercadopago,
-    attributes = this.attributes.map { it.toAttributeDomain() },
-    availableQuantity = this.availableQuantity,
-    buyingMode = this.buyingMode,
-    catalogListing = this.catalogListing,
-    catalogProductId = this.catalogProductId,
-    categoryId = this.categoryId,
-    condition = this.condition,
-    currencyId = this.currencyId,
-    domainId = this.domainId,
-    id = this.id,
-    installments = this.installments.toInstallmentDomain(),
-    listingTypeId = this.listingTypeId,
-    orderBackend = this.orderBackend,
-    permalink = this.permalink,
-    price = this.price,
-    sellerId = this.sellerId,
-    siteId = this.siteId,
-    soldQuantity = this.soldQuantity,
-    stopTime = this.stopTime,
-    tags = this.tags,
-    thumbnail = this.thumbnail,
-    thumbnailId = this.thumbnailId,
-    title = this.title,
-    useThumbnailId = this.useThumbnailId
-)
-
-fun Product.toProductRoom() = ProductRoom(
-    acceptsMercadopago = this.acceptsMercadopago,
-    attributes = this.attributes.map { it.toAttributeRoom() },
-    availableQuantity = this.availableQuantity,
-    buyingMode = this.buyingMode,
-    catalogListing = this.catalogListing,
-    catalogProductId = this.catalogProductId,
-    categoryId = this.categoryId,
-    condition = this.condition,
-    currencyId = this.currencyId,
-    domainId = this.domainId,
-    id = this.id,
-    installments = this.installments.toInstallmentRoom(),
-    listingTypeId = this.listingTypeId,
-    orderBackend = this.orderBackend,
-    permalink = this.permalink,
-    price = this.price,
-    sellerId = this.sellerId,
-    siteId = this.siteId,
-    soldQuantity = this.soldQuantity,
-    stopTime = this.stopTime,
-    tags = this.tags,
-    thumbnail = this.thumbnail,
-    thumbnailId = this.thumbnailId,
-    title = this.title,
-    useThumbnailId = this.useThumbnailId
+    useThumbnailId = this.useThumbnailId,
+    sellerAddress = this.sellerAddress.toSellerAddressDomain()
 )

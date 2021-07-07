@@ -2,13 +2,19 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="product"
+            type="com.jan.melichallenge.domain.model.Product" />
+    </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/item_horizontal_margin"
-        card_view:cardElevation="3dp"
+        card_view:cardElevation="4dp"
         card_view:cardUseCompatPadding="true">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,15 +24,17 @@
 
             <ImageView
                 android:id="@+id/productImage"
+                productImage="@{product}"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/image_item"
-                android:src="@drawable/ic_binoculars"
                 android:contentDescription="@string/app_name" />
 
             <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
                 style="@style/Theme.MILIChallenge.TextContentStyle"
+                productTitle="@{product}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_double_margin"
                 android:ellipsize="end"
                 android:maxLines="3"
                 android:paddingHorizontal="@dimen/item_horizontal_margin"
@@ -34,8 +42,10 @@
 
             <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
                 style="@style/Theme.MILIChallenge.TextImportantStyle"
+                productPrice="@{product}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_margin"
                 android:paddingHorizontal="@dimen/item_horizontal_margin" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

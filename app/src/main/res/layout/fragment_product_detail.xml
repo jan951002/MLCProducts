@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.jan.melichallenge.domain.model.Product" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/content_horizontal_margin"
+            android:paddingVertical="@dimen/content_vertical_margin"
+            tools:context=".ui.product.detail.ProductDetailFragment">
+
+            <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                android:id="@+id/productDetailGeneralInfo"
+                style="@style/Theme.MILIChallenge.TextTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_margin"
+                android:drawableStart="@drawable/ic_info"
+                android:gravity="center_vertical"
+                android:text="@string/lab_general_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                productDetailImage="@{product}"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/image_item"
+                android:layout_marginTop="@dimen/item_vertical_margin"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_place_holder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productDetailGeneralInfo" />
+
+            <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                android:id="@+id/productDetailTitle"
+                style="@style/Theme.MILIChallenge.TextImportantStyle"
+                productDetailTitle="@{product}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_double_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                android:id="@+id/productDetailPrice"
+                style="@style/Theme.MILIChallenge.TextContentStyle"
+                productDetailPrice="@{product}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_margin"
+                android:drawableStart="@drawable/ic_price"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productDetailTitle" />
+
+            <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                android:id="@+id/productAvailableQuantity"
+                style="@style/Theme.MILIChallenge.TextContentStyle"
+                productDetailAvailableQuantity="@{product}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_margin"
+                android:drawableStart="@drawable/ic_available_quantity"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productDetailPrice" />
+
+            <View
+                android:id="@+id/dividerGeneralInfo"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/item_vertical_double_margin"
+                android:background="@color/divider_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productAvailableQuantity" />
+
+            <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                android:id="@+id/productDetailSeller"
+                style="@style/Theme.MILIChallenge.TextTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_double_margin"
+                android:drawableStart="@drawable/ic_store"
+                android:gravity="center_vertical"
+                android:text="@string/lab_seller"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerGeneralInfo" />
+
+            <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                android:id="@+id/productSellerTitle"
+                style="@style/Theme.MILIChallenge.TextContentStyle"
+                productDetailSellerUrl="@{product}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_margin"
+                android:autoLink="web"
+                android:drawableStart="@drawable/ic_url"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productDetailSeller" />
+
+            <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                android:id="@+id/productSellerLocation"
+                style="@style/Theme.MILIChallenge.TextContentStyle"
+                productDetailSellerLocation="@{product}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_margin"
+                android:drawableStart="@drawable/ic_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productSellerTitle" />
+
+            <View
+                android:id="@+id/dividerSeller"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/item_vertical_double_margin"
+                android:background="@color/divider_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productSellerLocation" />
+
+            <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
+                android:id="@+id/productDetailAttributes"
+                style="@style/Theme.MILIChallenge.TextTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_double_margin"
+                android:drawableStart="@drawable/ic_list"
+                android:gravity="center_vertical"
+                android:text="@string/app_attributes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerSeller" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/attributesRecycler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_vertical_margin"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productDetailAttributes"
+                tools:listitem="@layout/item_attribute" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
