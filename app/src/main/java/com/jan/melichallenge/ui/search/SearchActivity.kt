@@ -1,39 +1,41 @@
 package com.jan.melichallenge.ui.search
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import com.jan.melichallenge.R
-import com.jan.melichallenge.base.BaseBottomDialog
-import com.jan.melichallenge.databinding.DialogSearchBinding
+import com.jan.melichallenge.base.BaseActivity
+import com.jan.melichallenge.databinding.ActivitySearchBinding
 import com.jan.melichallenge.domain.model.Search
 import com.jan.melichallenge.util.TextUtil.clearFocusAfterDone
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SearchDialog(context: Context, private val onSearchPressed: OnSearchPressed) :
-    BaseBottomDialog<DialogSearchBinding>(DialogSearchBinding::inflate, context),
+class SearchActivity :
+    BaseActivity<ActivitySearchBinding>(ActivitySearchBinding::inflate),
     SearchSuggestionsAdapter.OnItemClickListener {
 
-    var searchSuggestions = listOf<Search>()
+    private val searchViewModel: SearchViewModel by viewModel()
     private lateinit var searchSuggestionsAdapter: SearchSuggestionsAdapter
 
-    override fun layoutRes(): Int = R.layout.dialog_search
+    override fun layoutRes(): Int = R.layout.activity_search
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        searchSuggestionsAdapter = SearchSuggestionsAdapter(this)
-        binding.searchBackImage.setOnClickListener { dismiss() }
-        binding.searchEdit.clearFocusAfterDone(EditorInfo.IME_ACTION_SEARCH) { search() }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        binding.searchEdit.setText("")
         if (binding.searchEdit.requestFocus()) {
             window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
         }
-        searchSuggestionsAdapter.submitList(searchSuggestions)
+        searchSuggestionsAdapter = SearchSuggestionsAdapter(this)
         binding.searchSuggestionsRecycler.adapter = searchSuggestionsAdapter
+        binding.searchBackImage.setOnClickListener { onBackPressed() }
+        binding.searchEdit.clearFocusAfterDone(EditorInfo.IME_ACTION_SEARCH) { search() }
+        observableViewModel()
+    }
+
+    private fun observableViewModel() {
+        searchViewModel.lastSearches.observe(this, { searchSuggestions ->
+            searchSuggestionsAdapter.submitList(searchSuggestions)
+        })
     }
 
     override fun onAutocompleteText(search: Search) {
@@ -47,11 +49,10 @@ class SearchDialog(context: Context, private val onSearchPressed: OnSearchPresse
     }
 
     private fun search() {
-        dismiss()
-        onSearchPressed.onSearch(binding.searchEdit.text.toString())
+        val intent = Intent()
+        intent.putExtra("query", binding.searchEdit.text.toString())
+        setResult(RESULT_OK, intent)
+        finish()
     }
 
-    interface OnSearchPressed {
-        fun onSearch(query: String)
-    }
 }

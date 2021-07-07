@@ -65,9 +65,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/item_vertical_margin"
+                android:layout_marginEnd="@dimen/item_horizontal_double_margin"
                 android:drawableStart="@drawable/ic_price"
                 android:gravity="center_vertical"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/halfVerticalGuideLine"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productDetailTitle" />
 
@@ -81,8 +82,8 @@
                 android:drawableStart="@drawable/ic_available_quantity"
                 android:gravity="center_vertical"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/productDetailPrice" />
+                app:layout_constraintStart_toEndOf="@id/halfVerticalGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/productDetailTitle" />
 
             <View
                 android:id="@+id/dividerGeneralInfo"
@@ -114,9 +115,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/item_vertical_margin"
+                android:layout_marginEnd="@dimen/item_horizontal_double_margin"
                 android:autoLink="web"
                 android:drawableStart="@drawable/ic_url"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/halfVerticalGuideLine"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productDetailSeller" />
 
@@ -129,8 +131,8 @@
                 android:layout_marginTop="@dimen/item_vertical_margin"
                 android:drawableStart="@drawable/ic_location"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/productSellerTitle" />
+                app:layout_constraintStart_toEndOf="@id/halfVerticalGuideLine"
+                app:layout_constraintTop_toBottomOf="@+id/productDetailSeller" />
 
             <View
                 android:id="@+id/dividerSeller"
@@ -140,7 +142,7 @@
                 android:background="@color/divider_color"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/productSellerLocation" />
+                app:layout_constraintTop_toBottomOf="@+id/productSellerTitle" />
 
             <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
                 android:id="@+id/productDetailAttributes"
@@ -160,11 +162,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/item_vertical_margin"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productDetailAttributes"
+                app:spanCount="3"
                 tools:listitem="@layout/item_attribute" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/halfVerticalGuideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

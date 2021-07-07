@@ -1,6 +1,5 @@
 package com.jan.melichallenge.ui.product.list
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.viewModelScope
@@ -31,7 +30,6 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
         navController = Navigation.findNavController(binding.root)
         observableViewModel()
         configScroll()
-        configLayoutManager()
     }
 
     override fun onResume() {
@@ -52,14 +50,6 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     fun findProducts(query: String) {
         productsViewModel.query = query
         productsViewModel.viewModelScope.launch { productsViewModel.searchProducts(true, 0) }
-    }
-
-    private fun configLayoutManager() {
-        if (requireContext().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            (binding.productsRecycler.layoutManager as GridLayoutManager).spanCount = 2
-        } else {
-            (binding.productsRecycler.layoutManager as GridLayoutManager).spanCount = 3
-        }
     }
 
     private fun configScroll() {

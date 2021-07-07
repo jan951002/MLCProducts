@@ -64,11 +64,13 @@ class ProductsViewModel(
             }
 
             is BaseUseCaseResult.Error -> {
-                _searchState.value = GENERAL_ERROR
+                if (isNewQuery)
+                    _searchState.value = GENERAL_ERROR
             }
 
             is BaseUseCaseResult.NetworkError -> {
-                _searchState.value = NETWORK_ERROR
+                if (isNewQuery)
+                    _searchState.value = NETWORK_ERROR
             }
         }
     }
