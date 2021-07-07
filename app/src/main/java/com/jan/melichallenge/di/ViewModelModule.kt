@@ -1,7 +1,7 @@
 package com.jan.melichallenge.di
 
 import android.app.Application
-import com.jan.melichallenge.ui.main.MainViewModel
+import com.jan.melichallenge.ui.search.SearchViewModel
 import com.jan.melichallenge.ui.product.list.ProductsViewModel
 import com.jan.melichallenge.usecase.ProductListUseCase
 import com.jan.melichallenge.usecase.SaveSearchUseCase
@@ -36,7 +36,7 @@ val viewModelModule = module {
  *  @param searchListUseCase
  */
 fun provideMainViewModel(application: Application, searchListUseCase: SearchListUseCase) =
-    MainViewModel(application, searchListUseCase)
+    SearchViewModel(application, searchListUseCase)
 
 
 /**

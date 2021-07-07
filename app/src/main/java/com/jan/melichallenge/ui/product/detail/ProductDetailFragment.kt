@@ -1,10 +1,7 @@
 package com.jan.melichallenge.ui.product.detail
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.jan.melichallenge.R
 import com.jan.melichallenge.base.BaseFragment
 import com.jan.melichallenge.databinding.FragmentProductDetailBinding
@@ -17,7 +14,6 @@ class ProductDetailFragment :
     private val attributesAdapter = AttributesAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        configLayoutManager()
         binding.attributesRecycler.adapter = attributesAdapter
         arguments?.getSerializable("product")?.let {
             val product = (it as com.jan.melichallenge.ui.product.model.Product).toProductDomain()
@@ -33,13 +29,5 @@ class ProductDetailFragment :
         (requireActivity() as MainActivity).configAppBar(
             false, getString(R.string.lab_product_detail)
         )
-    }
-
-    private fun configLayoutManager() {
-        if (requireContext().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            binding.attributesRecycler.layoutManager = LinearLayoutManager(requireContext())
-        } else {
-            binding.attributesRecycler.layoutManager = GridLayoutManager(requireContext(), 3)
-        }
     }
 }

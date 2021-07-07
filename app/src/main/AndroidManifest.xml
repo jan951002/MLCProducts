@@ -16,14 +16,19 @@
         android:theme="@style/Theme.MILIChallenge.NoActionBar"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.search.SearchActivity"
+            android:configChanges="orientation" />
+
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:configChanges="orientation" />
 
         <activity
             android:name=".ui.splash.SplashActivity"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
