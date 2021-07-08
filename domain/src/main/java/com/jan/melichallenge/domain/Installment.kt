@@ -1,4 +1,4 @@
-package com.jan.melichallenge.domain.model
+package com.jan.melichallenge.domain
 
 data class Installment(
     val amount: Double,

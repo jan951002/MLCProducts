@@ -1,7 +1,7 @@
 package com.jan.melichallenge.ui.product.mapper
 
 import com.jan.melichallenge.config.LocationParcelable
-import com.jan.melichallenge.domain.model.Location
+import com.jan.melichallenge.domain.Location
 
 fun LocationParcelable.toLocationDomain() = Location(
     name = this.name

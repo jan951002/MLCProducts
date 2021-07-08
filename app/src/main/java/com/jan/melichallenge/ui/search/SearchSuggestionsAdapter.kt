@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jan.melichallenge.adaptermanager.AdapterGeneric.basicDiffUtil
 import com.jan.melichallenge.adaptermanager.AdapterGeneric.inflate
 import com.jan.melichallenge.databinding.ItemSearchSuggestionBinding
-import com.jan.melichallenge.domain.model.Search
+import com.jan.melichallenge.domain.Search
 
 class SearchSuggestionsAdapter(private val listener: OnItemClickListener) :
     ListAdapter<Search, SearchSuggestionsAdapter.ViewHolder>(diffUtil) {

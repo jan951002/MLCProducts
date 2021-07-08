@@ -1,7 +1,7 @@
 package com.jan.melichallenge.domain.mapper
 
 import com.jan.melichallenge.config.RatingsResponse
-import com.jan.melichallenge.domain.model.Rating
+import com.jan.melichallenge.domain.Rating
 
 fun RatingsResponse.toRatingsDomain() = Rating(
     negative = this.negative,

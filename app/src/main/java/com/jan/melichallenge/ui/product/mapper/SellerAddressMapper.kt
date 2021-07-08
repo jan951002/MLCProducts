@@ -1,7 +1,7 @@
 package com.jan.melichallenge.ui.product.mapper
 
 import com.jan.melichallenge.config.SellerAddressParcelable
-import com.jan.melichallenge.domain.model.SellerAddress
+import com.jan.melichallenge.domain.SellerAddress
 
 fun SellerAddressParcelable.toSellerAddressDomain() = SellerAddress(
     addressLine = this.addressLine,

@@ -3,7 +3,7 @@ package com.jan.melichallenge.data.database.datasource
 import com.jan.melichallenge.data.database.dao.SearchDao
 import com.jan.melichallenge.domain.mapper.toSearchDomain
 import com.jan.melichallenge.domain.mapper.toSearchRoom
-import com.jan.melichallenge.domain.model.Search
+import com.jan.melichallenge.domain.Search
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

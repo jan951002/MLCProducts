@@ -1,7 +1,7 @@
 package com.jan.melichallenge.domain.mapper
 
 import com.jan.melichallenge.config.SellerAddressResponse
-import com.jan.melichallenge.domain.model.SellerAddress
+import com.jan.melichallenge.domain.SellerAddress
 
 fun SellerAddressResponse.toSellerAddressDomain() = SellerAddress(
     addressLine = this.addressLine,

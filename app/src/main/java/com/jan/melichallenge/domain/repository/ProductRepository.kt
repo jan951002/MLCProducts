@@ -1,7 +1,7 @@
 package com.jan.melichallenge.domain.repository
 
 import com.jan.melichallenge.data.api.datasource.ProductRemoteDataSource
-import com.jan.melichallenge.domain.model.Product
+import com.jan.melichallenge.domain.Product
 
 interface ProductRepository {
 

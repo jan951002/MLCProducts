@@ -1,7 +1,7 @@
 package com.jan.melichallenge.domain.mapper
 
 import com.jan.melichallenge.config.SearchRoom
-import com.jan.melichallenge.domain.model.Search
+import com.jan.melichallenge.domain.Search
 
 fun SearchRoom.toSearchDomain() = Search(
     localId = this.localId,

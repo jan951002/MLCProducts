@@ -1,7 +1,7 @@
 package com.jan.melichallenge.ui.product.mapper
 
 import com.jan.melichallenge.config.TransactionsParcelable
-import com.jan.melichallenge.domain.model.Transactions
+import com.jan.melichallenge.domain.Transactions
 
 fun TransactionsParcelable.toTransactionsDomain() = Transactions(
     canceled = this.canceled,

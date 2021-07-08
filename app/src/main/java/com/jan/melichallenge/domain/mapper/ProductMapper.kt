@@ -1,7 +1,7 @@
 package com.jan.melichallenge.domain.mapper
 
 import com.jan.melichallenge.config.ProductResponse
-import com.jan.melichallenge.domain.model.Product
+import com.jan.melichallenge.domain.Product
 
 fun ProductResponse.toProductDomain() = Product(
     acceptsMercadopago = this.acceptsMercadopago,

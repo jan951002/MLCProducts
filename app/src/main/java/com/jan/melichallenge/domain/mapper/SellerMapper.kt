@@ -1,7 +1,7 @@
 package com.jan.melichallenge.domain.mapper
 
 import com.jan.melichallenge.config.SellerResponse
-import com.jan.melichallenge.domain.model.Seller
+import com.jan.melichallenge.domain.Seller
 
 fun SellerResponse.toSellerDomain() = Seller(
     carDealer = this.carDealer,
