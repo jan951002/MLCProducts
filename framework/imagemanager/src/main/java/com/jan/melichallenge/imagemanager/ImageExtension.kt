@@ -1,24 +1,23 @@
-package com.jan.melichallenge.util
+package com.jan.melichallenge.imagemanager
 
-import android.content.Context
 import android.widget.ImageView
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.jan.melichallenge.R
 
-object LoadImageUtil {
+object ImageExtension {
 
-    fun ImageView.loadUrl(urlString: String) {
+    fun ImageView.loadUrl(urlString: String, @DrawableRes placeholder: Int) {
 
         Glide.with(context)
             .load(urlString)
             .diskCacheStrategy(DiskCacheStrategy.DATA)
-            .placeholder(R.drawable.ic_place_holder)
+            .placeholder(placeholder)
             .into(this)
     }
 
-    fun ImageView.loadDrawable(context: Context, drawableRes: Int) {
+    fun ImageView.loadDrawable(@DrawableRes drawableRes: Int) {
         setImageDrawable(ContextCompat.getDrawable(context, drawableRes))
     }
 }

@@ -3,13 +3,14 @@ package com.jan.melichallenge.ui.product.list
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.jan.melichallenge.R
 import com.jan.melichallenge.domain.model.Product
-import com.jan.melichallenge.util.LoadImageUtil.loadUrl
-import com.jan.melichallenge.util.TextUtil.formatPrice
+import com.jan.melichallenge.imagemanager.ImageExtension.loadUrl
+import com.jan.melichallenge.textmanager.TextExtension.formatPrice
 
 @BindingAdapter("productImage")
 fun ImageView.setProductImage(product: Product) {
-    loadUrl(product.thumbnail ?: "")
+    loadUrl(product.thumbnail ?: "", R.drawable.ic_place_holder)
 }
 
 @BindingAdapter("productTitle")

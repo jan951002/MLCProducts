@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name = "MELIChallenge"
+include ':framework:imagemanager'
+include ':framework:textmanager'
