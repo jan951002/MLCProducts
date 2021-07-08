@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="MELIChallenge.app" target="11" />
+      <module name="MELIChallenge.data" target="11" />
       <module name="MELIChallenge.framework.adaptermanager" target="11" />
       <module name="MELIChallenge.framework.imagemanager" target="11" />
       <module name="MELIChallenge.framework.internetmanager" target="11" />

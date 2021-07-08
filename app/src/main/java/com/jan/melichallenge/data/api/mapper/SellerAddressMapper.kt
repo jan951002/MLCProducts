@@ -1,9 +1,8 @@
-package com.jan.melichallenge.domain.mapper
+package com.jan.melichallenge.data.api.mapper
 
-import com.jan.melichallenge.config.SellerAddressResponse
 import com.jan.melichallenge.domain.SellerAddress
 
-fun SellerAddressResponse.toSellerAddressDomain() = SellerAddress(
+fun com.jan.melichallenge.data.api.response.SellerAddress.toSellerAddressDomain() = SellerAddress(
     addressLine = this.addressLine,
     city = this.city.toDomainLocation(),
     comment = this.comment,

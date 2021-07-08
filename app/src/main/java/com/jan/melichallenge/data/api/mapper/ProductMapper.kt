@@ -1,9 +1,8 @@
-package com.jan.melichallenge.domain.mapper
+package com.jan.melichallenge.data.api.mapper
 
-import com.jan.melichallenge.config.ProductResponse
 import com.jan.melichallenge.domain.Product
 
-fun ProductResponse.toProductDomain() = Product(
+fun com.jan.melichallenge.data.api.response.Product.toProductDomain() = Product(
     acceptsMercadopago = this.acceptsMercadopago,
     attributes = this.attributes.map { it.toAttributeDomain() },
     availableQuantity = this.availableQuantity,

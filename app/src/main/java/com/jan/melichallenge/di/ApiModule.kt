@@ -5,13 +5,11 @@ import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.jan.melichallenge.R
 import com.jan.melichallenge.data.api.MeliApiServices
-import com.jan.melichallenge.data.api.datasource.ProductRemoteDataSource
 import com.jan.melichallenge.data.api.datasource.ProductRemoteDataSourceImpl
-import com.jan.melichallenge.domain.repository.ProductRepositoryImpl
+import com.jan.melichallenge.data.product.ProductRemoteDataSource
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
-import retrofit2.CallAdapter
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory

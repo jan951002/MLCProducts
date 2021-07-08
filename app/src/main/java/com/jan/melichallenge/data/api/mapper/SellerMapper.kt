@@ -1,9 +1,8 @@
-package com.jan.melichallenge.domain.mapper
+package com.jan.melichallenge.data.api.mapper
 
-import com.jan.melichallenge.config.SellerResponse
 import com.jan.melichallenge.domain.Seller
 
-fun SellerResponse.toSellerDomain() = Seller(
+fun com.jan.melichallenge.data.api.response.Seller.toSellerDomain() = Seller(
     carDealer = this.carDealer,
     id = this.id,
     permalink = this.permalink,

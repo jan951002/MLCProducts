@@ -1,9 +1,8 @@
-package com.jan.melichallenge.domain.mapper
+package com.jan.melichallenge.data.api.mapper
 
-import com.jan.melichallenge.config.AttributeResponse
 import com.jan.melichallenge.domain.Attribute
 
-fun AttributeResponse.toAttributeDomain() = Attribute(
+fun com.jan.melichallenge.data.api.response.Attribute.toAttributeDomain() = Attribute(
     attributeGroupId = this.attributeGroupId,
     attributeGroupName = this.attributeGroupName,
     id = this.id,

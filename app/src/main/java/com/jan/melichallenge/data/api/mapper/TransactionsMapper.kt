@@ -1,9 +1,8 @@
-package com.jan.melichallenge.domain.mapper
+package com.jan.melichallenge.data.api.mapper
 
-import com.jan.melichallenge.config.TransactionsResponse
 import com.jan.melichallenge.domain.Transactions
 
-fun TransactionsResponse.toTransactionsDomain() = Transactions(
+fun com.jan.melichallenge.data.api.response.Transactions.toTransactionsDomain() = Transactions(
     canceled = this.canceled,
     completed = this.completed,
     period = this.period,

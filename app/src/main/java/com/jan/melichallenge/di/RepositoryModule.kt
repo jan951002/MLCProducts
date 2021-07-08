@@ -1,11 +1,11 @@
 package com.jan.melichallenge.di
 
-import com.jan.melichallenge.data.api.datasource.ProductRemoteDataSource
-import com.jan.melichallenge.data.database.datasource.SearchLocalDataSource
-import com.jan.melichallenge.domain.repository.ProductRepository
-import com.jan.melichallenge.domain.repository.ProductRepositoryImpl
-import com.jan.melichallenge.domain.repository.SearchRepository
-import com.jan.melichallenge.domain.repository.SearchRepositoryImpl
+import com.jan.melichallenge.data.product.ProductRemoteDataSource
+import com.jan.melichallenge.data.product.ProductRepository
+import com.jan.melichallenge.data.product.ProductRepositoryImpl
+import com.jan.melichallenge.data.search.SearchLocalDataSource
+import com.jan.melichallenge.data.search.SearchRepository
+import com.jan.melichallenge.data.search.SearchRepositoryImpl
 import org.koin.dsl.module
 
 /**

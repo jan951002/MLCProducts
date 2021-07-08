@@ -1,6 +1,5 @@
-package com.jan.melichallenge.domain.repository
+package com.jan.melichallenge.data.search
 
-import com.jan.melichallenge.data.database.datasource.SearchLocalDataSource
 import com.jan.melichallenge.domain.Search
 import kotlinx.coroutines.flow.Flow
 import java.util.*

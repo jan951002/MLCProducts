@@ -1,6 +1,5 @@
-package com.jan.melichallenge.domain.repository
+package com.jan.melichallenge.data.product
 
-import com.jan.melichallenge.data.api.datasource.ProductRemoteDataSource
 import com.jan.melichallenge.domain.Product
 
 interface ProductRepository {

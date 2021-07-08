@@ -1,7 +1,7 @@
 package com.jan.melichallenge.usecase
 
 import com.jan.melichallenge.base.BaseUseCaseResult
-import com.jan.melichallenge.domain.repository.ProductRepository
+import com.jan.melichallenge.data.product.ProductRepository
 import retrofit2.HttpException
 
 class ProductListUseCase(private val productRepository: ProductRepository) {

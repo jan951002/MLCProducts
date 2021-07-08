@@ -1,9 +1,8 @@
-package com.jan.melichallenge.domain.mapper
+package com.jan.melichallenge.data.api.mapper
 
-import com.jan.melichallenge.config.InstallmentResponse
 import com.jan.melichallenge.domain.Installment
 
-fun InstallmentResponse.toInstallmentDomain() = Installment(
+fun com.jan.melichallenge.data.api.response.Installment.toInstallmentDomain() = Installment(
     amount = this.amount,
     currencyId = this.currencyId,
     quantity = this.quantity,
