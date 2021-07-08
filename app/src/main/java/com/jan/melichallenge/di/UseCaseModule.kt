@@ -1,9 +1,7 @@
 package com.jan.melichallenge.di
 
-import com.jan.melichallenge.data.api.datasource.ProductRemoteDataSource
-import com.jan.melichallenge.domain.repository.ProductRepository
-import com.jan.melichallenge.domain.repository.ProductRepositoryImpl
-import com.jan.melichallenge.domain.repository.SearchRepository
+import com.jan.melichallenge.data.product.ProductRepository
+import com.jan.melichallenge.data.search.SearchRepository
 import com.jan.melichallenge.usecase.ProductListUseCase
 import com.jan.melichallenge.usecase.SaveSearchUseCase
 import com.jan.melichallenge.usecase.SearchListUseCase

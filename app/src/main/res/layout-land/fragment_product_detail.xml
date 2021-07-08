@@ -7,7 +7,7 @@
 
         <variable
             name="product"
-            type="com.jan.melichallenge.domain.model.Product" />
+            type="com.jan.melichallenge.domain.Product" />
     </data>
 
     <ScrollView

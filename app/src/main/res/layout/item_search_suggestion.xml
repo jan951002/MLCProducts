@@ -6,7 +6,7 @@
 
         <variable
             name="search"
-            type="com.jan.melichallenge.domain.model.Search" />
+            type="com.jan.melichallenge.domain.Search" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

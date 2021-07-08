@@ -1,6 +1,6 @@
 package com.jan.melichallenge.usecase
 
-import com.jan.melichallenge.domain.repository.SearchRepository
+import com.jan.melichallenge.data.search.SearchRepository
 
 class SaveSearchUseCase(private val searchRepository: SearchRepository) {
 

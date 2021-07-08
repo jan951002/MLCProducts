@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jan.melichallenge.adaptermanager.AdapterGeneric.basicDiffUtil
 import com.jan.melichallenge.adaptermanager.AdapterGeneric.inflate
 import com.jan.melichallenge.databinding.ItemProductBinding
-import com.jan.melichallenge.domain.model.Product
+import com.jan.melichallenge.domain.Product
 
 class ProductsAdapter(private val listener: OnItemClickListener) :
     ListAdapter<Product, ProductsAdapter.ViewHolder>(diffUtil) {

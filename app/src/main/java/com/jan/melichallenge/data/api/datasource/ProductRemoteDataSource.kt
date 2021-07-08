@@ -1,12 +1,9 @@
 package com.jan.melichallenge.data.api.datasource
 
 import com.jan.melichallenge.data.api.MeliApiServices
-import com.jan.melichallenge.domain.mapper.toProductDomain
-import com.jan.melichallenge.domain.model.Product
-
-interface ProductRemoteDataSource {
-    suspend fun searchProducts(query: String, offset: Int): List<Product>
-}
+import com.jan.melichallenge.data.api.mapper.toProductDomain
+import com.jan.melichallenge.data.product.ProductRemoteDataSource
+import com.jan.melichallenge.domain.Product
 
 class ProductRemoteDataSourceImpl(private val meliApiServices: MeliApiServices) :
     ProductRemoteDataSource {
