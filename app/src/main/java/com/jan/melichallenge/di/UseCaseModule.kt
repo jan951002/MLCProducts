@@ -2,9 +2,9 @@ package com.jan.melichallenge.di
 
 import com.jan.melichallenge.data.product.ProductRepository
 import com.jan.melichallenge.data.search.SearchRepository
-import com.jan.melichallenge.usecase.ProductListUseCase
-import com.jan.melichallenge.usecase.SaveSearchUseCase
-import com.jan.melichallenge.usecase.SearchListUseCase
+import com.jan.melichallenge.usecases.ProductListUseCase
+import com.jan.melichallenge.usecases.SaveSearchUseCase
+import com.jan.melichallenge.usecases.SearchListUseCase
 import org.koin.dsl.module
 
 /**

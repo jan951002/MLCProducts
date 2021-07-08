@@ -1,4 +1,4 @@
-package com.jan.melichallenge.base
+package com.jan.melichallenge.usecases
 
 import retrofit2.HttpException
 

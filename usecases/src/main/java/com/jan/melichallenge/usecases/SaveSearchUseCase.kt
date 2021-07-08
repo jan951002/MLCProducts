@@ -1,4 +1,4 @@
-package com.jan.melichallenge.usecase
+package com.jan.melichallenge.usecases
 
 import com.jan.melichallenge.data.search.SearchRepository
 
