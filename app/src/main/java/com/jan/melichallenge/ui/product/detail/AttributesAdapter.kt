@@ -5,8 +5,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jan.melichallenge.databinding.ItemAttributeBinding
 import com.jan.melichallenge.domain.model.Attribute
-import com.jan.melichallenge.util.AdapterUtil
-import com.jan.melichallenge.util.AdapterUtil.inflate
+import com.jan.melichallenge.adaptermanager.AdapterGeneric.basicDiffUtil
+import com.jan.melichallenge.adaptermanager.AdapterGeneric.inflate
 
 class AttributesAdapter :
     ListAdapter<Attribute, AttributesAdapter.ViewHolder>(diffUtil) {
@@ -29,7 +29,7 @@ class AttributesAdapter :
     }
 
     companion object {
-        val diffUtil = AdapterUtil.basicDiffUtil<Attribute>(
+        val diffUtil = basicDiffUtil<Attribute>(
             areContentsTheSame = { oldItem, newItem -> oldItem.id == newItem.id },
             areItemsTheSame = { oldItem, newItem -> oldItem == newItem },
         )

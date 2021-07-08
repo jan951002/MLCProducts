@@ -1,10 +1,10 @@
-package com.jan.melichallenge.util
+package com.jan.melichallenge.internetmanager
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 
-object InternetUtil {
+object InternetExtension {
 
     fun Context.isOnline(): Boolean {
         val connectivityManager =

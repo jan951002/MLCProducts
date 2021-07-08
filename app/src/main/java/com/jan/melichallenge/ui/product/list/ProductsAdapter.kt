@@ -3,10 +3,10 @@ package com.jan.melichallenge.ui.product.list
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.jan.melichallenge.adaptermanager.AdapterGeneric.basicDiffUtil
+import com.jan.melichallenge.adaptermanager.AdapterGeneric.inflate
 import com.jan.melichallenge.databinding.ItemProductBinding
 import com.jan.melichallenge.domain.model.Product
-import com.jan.melichallenge.util.AdapterUtil
-import com.jan.melichallenge.util.AdapterUtil.inflate
 
 class ProductsAdapter(private val listener: OnItemClickListener) :
     ListAdapter<Product, ProductsAdapter.ViewHolder>(diffUtil) {
@@ -34,7 +34,7 @@ class ProductsAdapter(private val listener: OnItemClickListener) :
     }
 
     companion object {
-        val diffUtil = AdapterUtil.basicDiffUtil<Product>(
+        val diffUtil = basicDiffUtil<Product>(
             areContentsTheSame = { oldItem, newItem -> oldItem.id == newItem.id },
             areItemsTheSame = { oldItem, newItem -> oldItem == newItem },
         )

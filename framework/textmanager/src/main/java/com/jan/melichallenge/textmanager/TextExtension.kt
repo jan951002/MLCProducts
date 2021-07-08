@@ -1,17 +1,14 @@
-package com.jan.melichallenge.util
+package com.jan.melichallenge.textmanager
 
 import android.content.Context
 import android.graphics.Typeface
 import android.widget.EditText
 import java.text.DecimalFormat
 
-object TextUtil {
-    fun Context.fontRobotoLight(): Typeface? {
-        return Typeface.createFromAsset(assets, "Roboto-Light.ttf")
-    }
+object TextExtension {
 
-    fun Context.fontRobotoRegular(): Typeface? {
-        return Typeface.createFromAsset(assets, "Roboto-Regular.ttf")
+    fun Context.fontFromAsset(fontAssetName: String): Typeface? {
+        return Typeface.createFromAsset(assets, fontAssetName)
     }
 
     fun EditText.clearFocusAfterDone(action: Int, actionListener: () -> Unit) {

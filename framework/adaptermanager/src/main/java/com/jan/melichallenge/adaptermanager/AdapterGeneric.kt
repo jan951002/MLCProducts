@@ -1,16 +1,16 @@
-package com.jan.melichallenge.util
+package com.jan.melichallenge.adaptermanager
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.viewbinding.ViewBinding
-import com.jan.melichallenge.config.Inflate
 
 /**
  * This object contains the adapter utilities
  * @author Jaime Trujillo
  */
-object AdapterUtil {
+object AdapterGeneric {
+
 
     /**
      * Function to build our generic basic diff util for ListAdapter (RecyclerView)
@@ -34,3 +34,5 @@ object AdapterUtil {
         return inflate(layoutInflater, this, false)
     }
 }
+
+private typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T

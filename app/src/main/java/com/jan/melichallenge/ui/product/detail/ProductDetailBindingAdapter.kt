@@ -6,12 +6,12 @@ import androidx.databinding.BindingAdapter
 import com.jan.melichallenge.R
 import com.jan.melichallenge.domain.model.Attribute
 import com.jan.melichallenge.domain.model.Product
-import com.jan.melichallenge.util.LoadImageUtil.loadUrl
-import com.jan.melichallenge.util.TextUtil.formatPrice
+import com.jan.melichallenge.imagemanager.ImageExtension.loadUrl
+import com.jan.melichallenge.textmanager.TextExtension.formatPrice
 
 @BindingAdapter("productDetailImage")
 fun ImageView.setProductDetailImage(product: Product) {
-    loadUrl(product.thumbnail ?: "")
+    loadUrl(product.thumbnail ?: "", R.drawable.ic_place_holder)
 }
 
 @BindingAdapter("productDetailTitle")

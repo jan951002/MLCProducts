@@ -11,10 +11,10 @@ import com.jan.melichallenge.R
 import com.jan.melichallenge.base.BaseFragment
 import com.jan.melichallenge.databinding.FragmentProductsBinding
 import com.jan.melichallenge.domain.model.Product
+import com.jan.melichallenge.imagemanager.ImageExtension.loadDrawable
+import com.jan.melichallenge.internetmanager.InternetExtension.isOnline
 import com.jan.melichallenge.ui.main.MainActivity
 import com.jan.melichallenge.ui.product.mapper.toProductParcelable
-import com.jan.melichallenge.util.InternetUtil.isOnline
-import com.jan.melichallenge.util.LoadImageUtil.loadDrawable
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -70,9 +70,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     private fun configVisible(searchState: Int) {
         when (searchState) {
             ProductsViewModel.NEW_SEARCH -> {
-                binding.productsSearchState.searchStateImage.loadDrawable(
-                    requireContext(), R.drawable.ic_binoculars
-                )
+                binding.productsSearchState.searchStateImage.loadDrawable(R.drawable.ic_binoculars)
                 binding.productsSearchState.searchStateText.text =
                     getString(R.string.lab_search_suggestion)
                 binding.productsRecycler.visibility = View.GONE
@@ -85,9 +83,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.productsSearchState.root.visibility = View.GONE
             }
             ProductsViewModel.NOT_FOUND -> {
-                binding.productsSearchState.searchStateImage.loadDrawable(
-                    requireContext(), R.drawable.ic_not_found
-                )
+                binding.productsSearchState.searchStateImage.loadDrawable(R.drawable.ic_not_found)
                 binding.productsSearchState.searchStateText.text =
                     getString(R.string.lab_search_not_found)
                 binding.productsRecycler.visibility = View.GONE
@@ -95,9 +91,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
             ProductsViewModel.GENERAL_ERROR -> {
-                binding.productsSearchState.searchStateImage.loadDrawable(
-                    requireContext(), R.drawable.ic_error
-                )
+                binding.productsSearchState.searchStateImage.loadDrawable(R.drawable.ic_error)
                 binding.productsSearchState.searchStateText.text =
                     if (requireContext().isOnline())
                         getString(R.string.lab_search_general_error)
@@ -108,9 +102,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
             ProductsViewModel.NETWORK_ERROR -> {
-                binding.productsSearchState.searchStateImage.loadDrawable(
-                    requireContext(), R.drawable.ic_error
-                )
+                binding.productsSearchState.searchStateImage.loadDrawable(R.drawable.ic_error)
                 binding.productsSearchState.searchStateText.text =
                     if (requireContext().isOnline())
                         getString(R.string.lab_search_network_error)
