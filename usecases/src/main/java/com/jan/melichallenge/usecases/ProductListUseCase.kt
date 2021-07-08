@@ -1,6 +1,5 @@
-package com.jan.melichallenge.usecase
+package com.jan.melichallenge.usecases
 
-import com.jan.melichallenge.base.BaseUseCaseResult
 import com.jan.melichallenge.data.product.ProductRepository
 import retrofit2.HttpException
 

@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/framework/imagemanager" />
             <option value="$PROJECT_DIR$/framework/internetmanager" />
             <option value="$PROJECT_DIR$/framework/textmanager" />
+            <option value="$PROJECT_DIR$/usecases" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
