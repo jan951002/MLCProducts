@@ -46,7 +46,9 @@ android {
 
 dependencies {
 
+    implementation project(":framework:adaptermanager")
     implementation project(":framework:imagemanager")
+    implementation project(":framework:internetmanager")
     implementation project(":framework:textmanager")
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

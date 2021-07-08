@@ -3,10 +3,10 @@ package com.jan.melichallenge.ui.search
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.jan.melichallenge.adaptermanager.AdapterGeneric.basicDiffUtil
+import com.jan.melichallenge.adaptermanager.AdapterGeneric.inflate
 import com.jan.melichallenge.databinding.ItemSearchSuggestionBinding
 import com.jan.melichallenge.domain.model.Search
-import com.jan.melichallenge.util.AdapterUtil
-import com.jan.melichallenge.util.AdapterUtil.inflate
 
 class SearchSuggestionsAdapter(private val listener: OnItemClickListener) :
     ListAdapter<Search, SearchSuggestionsAdapter.ViewHolder>(diffUtil) {
@@ -39,7 +39,7 @@ class SearchSuggestionsAdapter(private val listener: OnItemClickListener) :
     }
 
     companion object {
-        val diffUtil = AdapterUtil.basicDiffUtil<Search>(
+        val diffUtil = basicDiffUtil<Search>(
             areContentsTheSame = { oldItem, newItem -> oldItem.localId == newItem.localId },
             areItemsTheSame = { oldItem, newItem -> oldItem == newItem },
         )

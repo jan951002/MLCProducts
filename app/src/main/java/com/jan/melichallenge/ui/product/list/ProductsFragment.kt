@@ -12,9 +12,9 @@ import com.jan.melichallenge.base.BaseFragment
 import com.jan.melichallenge.databinding.FragmentProductsBinding
 import com.jan.melichallenge.domain.model.Product
 import com.jan.melichallenge.imagemanager.ImageExtension.loadDrawable
+import com.jan.melichallenge.internetmanager.InternetExtension.isOnline
 import com.jan.melichallenge.ui.main.MainActivity
 import com.jan.melichallenge.ui.product.mapper.toProductParcelable
-import com.jan.melichallenge.util.InternetUtil.isOnline
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
