@@ -4,8 +4,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.jan.melichallenge.R
-import com.jan.melichallenge.domain.model.Attribute
-import com.jan.melichallenge.domain.model.Product
+import com.jan.melichallenge.domain.Attribute
+import com.jan.melichallenge.domain.Product
 import com.jan.melichallenge.imagemanager.ImageExtension.loadUrl
 import com.jan.melichallenge.textmanager.TextExtension.formatPrice
 

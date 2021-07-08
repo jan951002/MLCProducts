@@ -1,7 +1,7 @@
 package com.jan.melichallenge.ui.product.mapper
 
 import com.jan.melichallenge.config.AttributeParcelable
-import com.jan.melichallenge.domain.model.Attribute
+import com.jan.melichallenge.domain.Attribute
 
 fun AttributeParcelable.toAttributeDomain() = Attribute(
     attributeGroupId = this.attributeGroupId,

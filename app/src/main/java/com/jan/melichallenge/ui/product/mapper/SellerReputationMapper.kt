@@ -1,7 +1,7 @@
 package com.jan.melichallenge.ui.product.mapper
 
 import com.jan.melichallenge.config.SellerReputationParcelable
-import com.jan.melichallenge.domain.model.SellerReputation
+import com.jan.melichallenge.domain.SellerReputation
 
 fun SellerReputationParcelable.toSellerReputationDomain() = SellerReputation(
     levelId = this.levelId,

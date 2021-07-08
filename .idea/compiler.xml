@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="MELIChallenge.app" target="11" />
+      <module name="MELIChallenge.data" target="11" />
+      <module name="MELIChallenge.framework.adaptermanager" target="11" />
+      <module name="MELIChallenge.framework.imagemanager" target="11" />
+      <module name="MELIChallenge.framework.internetmanager" target="11" />
+      <module name="MELIChallenge.framework.textmanager" target="11" />
+      <module name="MELIChallenge.usecases" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

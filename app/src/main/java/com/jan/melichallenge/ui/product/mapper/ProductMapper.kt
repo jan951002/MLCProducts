@@ -1,7 +1,7 @@
 package com.jan.melichallenge.ui.product.mapper
 
 import com.jan.melichallenge.config.ProductParcelable
-import com.jan.melichallenge.domain.model.Product
+import com.jan.melichallenge.domain.Product
 
 fun ProductParcelable.toProductDomain() = Product(
     acceptsMercadopago = this.acceptsMercadopago,

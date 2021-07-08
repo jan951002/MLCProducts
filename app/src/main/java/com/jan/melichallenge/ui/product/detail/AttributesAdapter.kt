@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jan.melichallenge.databinding.ItemAttributeBinding
-import com.jan.melichallenge.domain.model.Attribute
+import com.jan.melichallenge.domain.Attribute
 import com.jan.melichallenge.adaptermanager.AdapterGeneric.basicDiffUtil
 import com.jan.melichallenge.adaptermanager.AdapterGeneric.inflate
 

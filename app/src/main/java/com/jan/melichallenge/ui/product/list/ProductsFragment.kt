@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jan.melichallenge.R
 import com.jan.melichallenge.base.BaseFragment
 import com.jan.melichallenge.databinding.FragmentProductsBinding
-import com.jan.melichallenge.domain.model.Product
+import com.jan.melichallenge.domain.Product
 import com.jan.melichallenge.imagemanager.ImageExtension.loadDrawable
 import com.jan.melichallenge.internetmanager.InternetExtension.isOnline
 import com.jan.melichallenge.ui.main.MainActivity

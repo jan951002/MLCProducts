@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.room.Room
 import com.jan.melichallenge.data.database.MeliDatabase
 import com.jan.melichallenge.data.database.dao.SearchDao
-import com.jan.melichallenge.data.database.datasource.SearchLocalDataSource
 import com.jan.melichallenge.data.database.datasource.SearchLocalDataSourceImpl
+import com.jan.melichallenge.data.search.SearchLocalDataSource
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 

@@ -1,7 +1,7 @@
 package com.jan.melichallenge.ui.product.mapper
 
 import com.jan.melichallenge.config.SellerParcelable
-import com.jan.melichallenge.domain.model.Seller
+import com.jan.melichallenge.domain.Seller
 
 fun SellerParcelable.toSellerDomain() = Seller(
     carDealer = this.carDealer,
