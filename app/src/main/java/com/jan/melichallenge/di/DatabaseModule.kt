@@ -1,11 +1,10 @@
 package com.jan.melichallenge.di
 
-import android.app.Application
-import androidx.room.Room
-import com.jan.melichallenge.data.database.MeliDatabase
-import com.jan.melichallenge.data.database.dao.SearchDao
-import com.jan.melichallenge.data.database.datasource.SearchLocalDataSourceImpl
 import com.jan.melichallenge.data.search.SearchLocalDataSource
+import com.jan.melichallenge.databasemanager.MeliDatabase
+import com.jan.melichallenge.databasemanager.provideMeliDatabase
+import com.jan.melichallenge.databasemanager.search.SearchDao
+import com.jan.melichallenge.databasemanager.search.SearchLocalDataSourceImpl
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
@@ -22,23 +21,16 @@ val databaseModule = module {
     single { provideSearchLocalDataSource(searchDao = get()) }
 }
 
-/**
- *  function to build our MeliDatabase
- *  @param application
- */
-fun provideMeliDatabase(application: Application): MeliDatabase =
-    Room.databaseBuilder(application, MeliDatabase::class.java, "meli-db")
-        .fallbackToDestructiveMigration()
-        .build()
 
 /**
  *  function to build our SearchDao
  *  @param meliDatabase
  */
-fun provideSearchDao(meliDatabase: MeliDatabase) = meliDatabase.searchDao
+fun provideSearchDao(meliDatabase: MeliDatabase): SearchDao = meliDatabase.searchDao
 
 /**
  *  function to build our SearchLocalDataSource
  *  @param searchDao
  */
-fun provideSearchLocalDataSource(searchDao: SearchDao): SearchLocalDataSource = SearchLocalDataSourceImpl(searchDao)
+fun provideSearchLocalDataSource(searchDao: SearchDao): SearchLocalDataSource =
+    SearchLocalDataSourceImpl(searchDao)

@@ -1,10 +1,9 @@
-package com.jan.melichallenge.data.database.dao
+package com.jan.melichallenge.databasemanager.search
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.jan.melichallenge.data.database.model.Search
 import kotlinx.coroutines.flow.Flow
 
 @Dao

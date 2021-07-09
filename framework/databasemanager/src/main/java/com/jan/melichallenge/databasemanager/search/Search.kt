@@ -1,4 +1,4 @@
-package com.jan.melichallenge.data.database.model
+package com.jan.melichallenge.databasemanager.search
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,8 +1,5 @@
-package com.jan.melichallenge.data.database.datasource
+package com.jan.melichallenge.databasemanager.search
 
-import com.jan.melichallenge.data.database.dao.SearchDao
-import com.jan.melichallenge.data.database.mapper.toSearchDomain
-import com.jan.melichallenge.data.database.mapper.toSearchRoom
 import com.jan.melichallenge.data.search.SearchLocalDataSource
 import com.jan.melichallenge.domain.Search
 import kotlinx.coroutines.flow.map

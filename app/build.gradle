@@ -49,6 +49,7 @@ dependencies {
     implementation project(":data")
     implementation project(":domain")
     implementation project(":framework:adaptermanager")
+    implementation project(":framework:databasemanager")
     implementation project(":framework:imagemanager")
     implementation project(":framework:internetmanager")
     implementation project(":framework:textmanager")
@@ -89,11 +90,6 @@ dependencies {
         compile.exclude group: 'org.jetbrains.kotlinx', module: 'atomicfu-common'
     }
 
-    // room
-    implementation 'androidx.room:room-runtime:2.3.0'
-    implementation "androidx.room:room-ktx:2.3.0"
-    annotationProcessor 'androidx.room:room-compiler:2.3.0'
-    kapt 'androidx.room:room-compiler:2.3.0'
 
     //Toasty
     implementation 'com.github.GrenderG:Toasty:1.5.0'
