@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.jan.melichallenge.R
-import com.jan.melichallenge.base.BaseActivity
+import com.jan.melichallenge.ui.base.BaseActivity
 import com.jan.melichallenge.databinding.ActivitySplashBinding
 import com.jan.melichallenge.ui.main.MainActivity
 import kotlinx.coroutines.delay

@@ -8,7 +8,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jan.melichallenge.R
-import com.jan.melichallenge.base.BaseFragment
+import com.jan.melichallenge.ui.base.BaseFragment
 import com.jan.melichallenge.databinding.FragmentProductsBinding
 import com.jan.melichallenge.domain.Product
 import com.jan.melichallenge.imagemanager.ImageExtension.loadDrawable

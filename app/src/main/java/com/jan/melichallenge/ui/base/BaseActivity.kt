@@ -1,4 +1,4 @@
-package com.jan.melichallenge.base
+package com.jan.melichallenge.ui.base
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes

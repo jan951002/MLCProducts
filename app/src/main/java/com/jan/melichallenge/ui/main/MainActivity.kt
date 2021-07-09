@@ -8,7 +8,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.jan.melichallenge.R
-import com.jan.melichallenge.base.BaseActivity
+import com.jan.melichallenge.ui.base.BaseActivity
 import com.jan.melichallenge.databinding.ActivityMainBinding
 import com.jan.melichallenge.ui.product.list.ProductsFragment
 import com.jan.melichallenge.ui.search.SearchActivity

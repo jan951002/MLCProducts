@@ -3,7 +3,7 @@ package com.jan.melichallenge.ui.product.detail
 import android.os.Bundle
 import android.view.View
 import com.jan.melichallenge.R
-import com.jan.melichallenge.base.BaseFragment
+import com.jan.melichallenge.ui.base.BaseFragment
 import com.jan.melichallenge.databinding.FragmentProductDetailBinding
 import com.jan.melichallenge.ui.main.MainActivity
 import com.jan.melichallenge.ui.product.mapper.toProductDomain
