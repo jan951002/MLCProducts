@@ -1,9 +1,9 @@
-package com.jan.melichallenge.ui.product.mapper
+package com.jan.melichallenge.mapper
 
-import com.jan.melichallenge.config.ProductParcelable
 import com.jan.melichallenge.domain.Product
+import com.jan.melichallenge.serializable.ProductSerializable
 
-fun ProductParcelable.toProductDomain() = Product(
+fun ProductSerializable.toProductDomain() = Product(
     acceptsMercadopago = this.acceptsMercadopago,
     attributes = this.attributes.map { it.toAttributeDomain() },
     availableQuantity = this.availableQuantity,
@@ -32,7 +32,7 @@ fun ProductParcelable.toProductDomain() = Product(
     sellerAddress = this.sellerAddress.toSellerAddressDomain()
 )
 
-fun Product.toProductParcelable() = ProductParcelable(
+fun Product.toProductParcelable() = ProductSerializable(
     acceptsMercadopago = this.acceptsMercadopago,
     attributes = this.attributes.map { it.toAttributeParcelable() },
     availableQuantity = this.availableQuantity,

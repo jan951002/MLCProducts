@@ -1,15 +1,15 @@
-package com.jan.melichallenge.ui.product.mapper
+package com.jan.melichallenge.mapper
 
-import com.jan.melichallenge.config.RatingParcelable
 import com.jan.melichallenge.domain.Rating
+import com.jan.melichallenge.serializable.RatingSerializable
 
-fun RatingParcelable.toRatingsDomain() = Rating(
+fun RatingSerializable.toRatingsDomain() = Rating(
     negative = this.negative,
     neutral = this.neutral,
     positive = this.positive
 )
 
-fun Rating.toRatingsParcelable() = RatingParcelable(
+fun Rating.toRatingsParcelable() = RatingSerializable(
     negative = this.negative,
     neutral = this.neutral,
     positive = this.positive

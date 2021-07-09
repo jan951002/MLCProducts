@@ -1,4 +1,4 @@
-package com.jan.melichallenge.ui.product.model
+package com.jan.melichallenge.serializable
 
 import java.io.Serializable
 
@@ -11,3 +11,5 @@ data class Seller(
     val sellerReputation: SellerReputation?,
     val tags: List<String>?
 ) : Serializable
+
+typealias SellerSerializable = Seller

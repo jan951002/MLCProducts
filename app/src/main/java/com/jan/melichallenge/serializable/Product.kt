@@ -1,4 +1,4 @@
-package com.jan.melichallenge.ui.product.model
+package com.jan.melichallenge.serializable
 
 import java.io.Serializable
 
@@ -30,3 +30,5 @@ data class Product(
     val title: String?,
     val useThumbnailId: Boolean
 ) : Serializable
+
+typealias ProductSerializable = Product

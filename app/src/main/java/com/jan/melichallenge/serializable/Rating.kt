@@ -1,4 +1,4 @@
-package com.jan.melichallenge.ui.product.model
+package com.jan.melichallenge.serializable
 
 import java.io.Serializable
 
@@ -7,3 +7,5 @@ data class Rating(
     val neutral: Double,
     val positive: Double
 ) : Serializable
+
+typealias RatingSerializable = Rating

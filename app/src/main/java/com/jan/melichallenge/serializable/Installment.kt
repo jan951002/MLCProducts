@@ -1,4 +1,4 @@
-package com.jan.melichallenge.ui.product.model
+package com.jan.melichallenge.serializable
 
 import java.io.Serializable
 
@@ -8,3 +8,5 @@ data class Installment(
     val quantity: Int,
     val rate: Double
 ) : Serializable
+
+typealias InstallmentSerializable = Installment

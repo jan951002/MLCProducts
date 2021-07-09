@@ -1,9 +1,9 @@
-package com.jan.melichallenge.ui.product.mapper
+package com.jan.melichallenge.mapper
 
-import com.jan.melichallenge.config.SellerParcelable
 import com.jan.melichallenge.domain.Seller
+import com.jan.melichallenge.serializable.SellerSerializable
 
-fun SellerParcelable.toSellerDomain() = Seller(
+fun SellerSerializable.toSellerDomain() = Seller(
     carDealer = this.carDealer,
     id = this.id,
     permalink = this.permalink,
@@ -13,7 +13,7 @@ fun SellerParcelable.toSellerDomain() = Seller(
     tags = this.tags
 )
 
-fun Seller.toSellerParcelable() = SellerParcelable(
+fun Seller.toSellerParcelable() = SellerSerializable(
     carDealer = this.carDealer,
     id = this.id,
     permalink = this.permalink,

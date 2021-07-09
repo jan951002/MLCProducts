@@ -1,9 +1,9 @@
-package com.jan.melichallenge.ui.product.mapper
+package com.jan.melichallenge.mapper
 
-import com.jan.melichallenge.config.TransactionsParcelable
 import com.jan.melichallenge.domain.Transactions
+import com.jan.melichallenge.serializable.TransactionsSerializable
 
-fun TransactionsParcelable.toTransactionsDomain() = Transactions(
+fun TransactionsSerializable.toTransactionsDomain() = Transactions(
     canceled = this.canceled,
     completed = this.completed,
     period = this.period,
@@ -11,7 +11,7 @@ fun TransactionsParcelable.toTransactionsDomain() = Transactions(
     total = this.total
 )
 
-fun Transactions.toTransactionsParcelable() = TransactionsParcelable(
+fun Transactions.toTransactionsParcelable() = TransactionsSerializable(
     canceled = this.canceled,
     completed = this.completed,
     period = this.period,

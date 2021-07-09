@@ -1,4 +1,4 @@
-package com.jan.melichallenge.ui.product.model
+package com.jan.melichallenge.serializable
 
 import java.io.Serializable
 
@@ -11,3 +11,5 @@ data class Attribute(
     val valueId: String?,
     val valueName: String?,
 ) : Serializable
+
+typealias AttributeSerializable = Attribute

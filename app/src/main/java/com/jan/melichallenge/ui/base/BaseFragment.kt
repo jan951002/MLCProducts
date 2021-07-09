@@ -9,7 +9,6 @@ import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.jan.melichallenge.config.Inflate
 
 /**
  * Base fragment class

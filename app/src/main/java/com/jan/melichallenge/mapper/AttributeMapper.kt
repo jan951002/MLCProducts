@@ -1,9 +1,9 @@
-package com.jan.melichallenge.ui.product.mapper
+package com.jan.melichallenge.mapper
 
-import com.jan.melichallenge.config.AttributeParcelable
 import com.jan.melichallenge.domain.Attribute
+import com.jan.melichallenge.serializable.AttributeSerializable
 
-fun AttributeParcelable.toAttributeDomain() = Attribute(
+fun AttributeSerializable.toAttributeDomain() = Attribute(
     attributeGroupId = this.attributeGroupId,
     attributeGroupName = this.attributeGroupName,
     id = this.id,
@@ -13,7 +13,7 @@ fun AttributeParcelable.toAttributeDomain() = Attribute(
     valueName = this.valueName
 )
 
-fun Attribute.toAttributeParcelable() = AttributeParcelable(
+fun Attribute.toAttributeParcelable() = AttributeSerializable(
     attributeGroupId = this.attributeGroupId,
     attributeGroupName = this.attributeGroupName,
     id = this.id,

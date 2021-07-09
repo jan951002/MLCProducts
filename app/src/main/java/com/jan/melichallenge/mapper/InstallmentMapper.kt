@@ -1,16 +1,16 @@
-package com.jan.melichallenge.ui.product.mapper
+package com.jan.melichallenge.mapper
 
-import com.jan.melichallenge.config.InstallmentParcelable
 import com.jan.melichallenge.domain.Installment
+import com.jan.melichallenge.serializable.InstallmentSerializable
 
-fun InstallmentParcelable.toInstallmentDomain() = Installment(
+fun InstallmentSerializable.toInstallmentDomain() = Installment(
     amount = this.amount,
     currencyId = this.currencyId,
     quantity = this.quantity,
     rate = this.rate
 )
 
-fun Installment.toInstallmentParcelable() = InstallmentParcelable(
+fun Installment.toInstallmentParcelable() = InstallmentSerializable(
     amount = this.amount,
     currencyId = this.currencyId,
     quantity = this.quantity,

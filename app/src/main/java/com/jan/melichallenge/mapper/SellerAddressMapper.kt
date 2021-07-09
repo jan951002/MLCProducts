@@ -1,9 +1,9 @@
-package com.jan.melichallenge.ui.product.mapper
+package com.jan.melichallenge.mapper
 
-import com.jan.melichallenge.config.SellerAddressParcelable
 import com.jan.melichallenge.domain.SellerAddress
+import com.jan.melichallenge.serializable.SellerAddressSerializable
 
-fun SellerAddressParcelable.toSellerAddressDomain() = SellerAddress(
+fun SellerAddressSerializable.toSellerAddressDomain() = SellerAddress(
     addressLine = this.addressLine,
     city = this.city.toLocationDomain(),
     comment = this.comment,
@@ -15,7 +15,7 @@ fun SellerAddressParcelable.toSellerAddressDomain() = SellerAddress(
     zipCode = this.zipCode
 )
 
-fun SellerAddress.toSellerAddressParcelable() = SellerAddressParcelable(
+fun SellerAddress.toSellerAddressParcelable() = SellerAddressSerializable(
     addressLine = this.addressLine,
     city = this.city.toLocationParcelable(),
     comment = this.comment,
