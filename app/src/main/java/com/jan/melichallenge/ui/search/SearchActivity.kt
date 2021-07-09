@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import com.jan.melichallenge.R
-import com.jan.melichallenge.base.BaseActivity
+import com.jan.melichallenge.ui.base.BaseActivity
 import com.jan.melichallenge.databinding.ActivitySearchBinding
-import com.jan.melichallenge.domain.model.Search
-import com.jan.melichallenge.util.TextUtil.clearFocusAfterDone
+import com.jan.melichallenge.domain.Search
+import com.jan.melichallenge.textmanager.TextExtension.clearFocusAfterDone
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchActivity :

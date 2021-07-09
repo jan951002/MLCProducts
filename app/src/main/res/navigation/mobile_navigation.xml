@@ -18,6 +18,6 @@
         android:name="com.jan.melichallenge.ui.product.detail.ProductDetailFragment">
         <argument
             android:name="product"
-            app:argType="com.jan.melichallenge.ui.product.model.Product" />
+            app:argType="com.jan.melichallenge.serializable.Product" />
     </fragment>
 </navigation>

@@ -5,10 +5,10 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.jan.melichallenge.base.BaseUseCaseResult
-import com.jan.melichallenge.domain.model.Product
-import com.jan.melichallenge.usecase.ProductListUseCase
-import com.jan.melichallenge.usecase.SaveSearchUseCase
+import com.jan.melichallenge.usecases.BaseUseCaseResult
+import com.jan.melichallenge.domain.Product
+import com.jan.melichallenge.usecases.ProductListUseCase
+import com.jan.melichallenge.usecases.SaveSearchUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
