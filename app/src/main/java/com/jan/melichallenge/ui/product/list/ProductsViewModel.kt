@@ -5,10 +5,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.jan.melichallenge.usecases.BaseUseCaseResult
+import com.jan.melichallenge.domain.Error
 import com.jan.melichallenge.domain.Product
-import com.jan.melichallenge.usecases.ProductListUseCase
-import com.jan.melichallenge.usecases.SaveSearchUseCase
+import com.jan.melichallenge.domain.Result
+import com.jan.melichallenge.usecases.product.ProductListUseCase
+import com.jan.melichallenge.usecases.search.SaveSearchUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -45,7 +46,7 @@ class ProductsViewModel(
         if (isNewQuery)
             _searchState.value = LOADING
         when (val result = productListUseCase.invoke(query, offset)) {
-            is BaseUseCaseResult.Success -> {
+            is Result.Success -> {
                 result.data?.let { productList ->
                     if (isNewQuery) {
                         if (productList.isNotEmpty()) {
@@ -63,14 +64,13 @@ class ProductsViewModel(
                 }
             }
 
-            is BaseUseCaseResult.Error -> {
-                if (isNewQuery)
-                    _searchState.value = GENERAL_ERROR
-            }
-
-            is BaseUseCaseResult.NetworkError -> {
-                if (isNewQuery)
-                    _searchState.value = NETWORK_ERROR
+            is Result.Failure -> {
+                if (isNewQuery) {
+                    if (result.reason is Error.UnknownError)
+                        _searchState.value = GENERAL_ERROR
+                    else
+                        _searchState.value = NETWORK_ERROR
+                }
             }
         }
     }
