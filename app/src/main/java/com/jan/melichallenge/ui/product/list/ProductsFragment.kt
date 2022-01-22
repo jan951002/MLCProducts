@@ -2,25 +2,27 @@ package com.jan.melichallenge.ui.product.list
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jan.melichallenge.R
-import com.jan.melichallenge.ui.base.BaseFragment
 import com.jan.melichallenge.databinding.FragmentProductsBinding
 import com.jan.melichallenge.domain.Product
 import com.jan.melichallenge.imagemanager.ImageExtension.loadDrawable
 import com.jan.melichallenge.internetmanager.InternetExtension.isOnline
-import com.jan.melichallenge.ui.main.MainActivity
 import com.jan.melichallenge.mapper.toProductParcelable
+import com.jan.melichallenge.ui.base.BaseFragment
+import com.jan.melichallenge.ui.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate) {
 
-    private val productsViewModel: ProductsViewModel by viewModel()
+    private val productsViewModel: ProductsViewModel by viewModels()
     private lateinit var productsAdapter: ProductsAdapter
     private lateinit var navController: NavController
 

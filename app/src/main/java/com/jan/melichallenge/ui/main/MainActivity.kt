@@ -12,7 +12,9 @@ import com.jan.melichallenge.ui.base.BaseActivity
 import com.jan.melichallenge.databinding.ActivityMainBinding
 import com.jan.melichallenge.ui.product.list.ProductsFragment
 import com.jan.melichallenge.ui.search.SearchActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     private lateinit var searchDialog: SearchActivity
