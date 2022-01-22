@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
     id "androidx.navigation.safeargs.kotlin"
 }
 
@@ -39,6 +40,7 @@ android {
     }
     kapt {
         generateStubs = true
+        correctErrorTypes = true
     }
 }
 
@@ -87,10 +89,6 @@ dependencies {
         compile.exclude group: 'org.jetbrains.kotlinx', module: 'atomicfu-common'
     }
 
-    // Koin for the dependencies injections
-    implementation generalDependencies.koin
-    implementation generalDependencies.koinAndroid
-
     //LiveData
     implementation generalDependencies.livedata
 
@@ -104,5 +102,14 @@ dependencies {
     implementation generalDependencies.room
     kapt compilerDependencies.room
 
+    //databinding
     kapt compilerDependencies.databinding
+
+    //Dagger hilt for dependency injections
+    implementation generalDependencies.daggerHilt
+    kapt compilerDependencies.daggerHilt
+
+    //Activity and fragment ktx
+    implementation generalDependencies.activityKtx
+    implementation generalDependencies.fragmentKtx
 }

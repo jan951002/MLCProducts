@@ -1,24 +1,25 @@
 package com.jan.melichallenge.ui.product.list
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jan.melichallenge.domain.Error
 import com.jan.melichallenge.domain.Product
 import com.jan.melichallenge.domain.Result
 import com.jan.melichallenge.usecases.product.ProductListUseCase
 import com.jan.melichallenge.usecases.search.SaveSearchUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProductsViewModel(
-    application: Application,
+@HiltViewModel
+class ProductsViewModel @Inject constructor(
     private val productListUseCase: ProductListUseCase,
     private val saveSearchUseCase: SaveSearchUseCase
-) : AndroidViewModel(application) {
+) : ViewModel() {
 
     companion object {
         const val NEW_SEARCH = 0
@@ -57,9 +58,10 @@ class ProductsViewModel(
                             _searchState.value = NOT_FOUND
                         }
                     } else {
-                        val newList = products.value?.toMutableList()
-                        newList?.addAll(productList)
-                        _products.value = newList?.toList()
+                        products.value?.toMutableList()?.let { newList ->
+                            newList.addAll(productList)
+                            _products.value = newList.toList()
+                        }
                     }
                 }
             }

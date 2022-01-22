@@ -1,12 +1,13 @@
 package com.jan.melichallenge.ui.search
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.jan.melichallenge.usecases.search.SearchListUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SearchViewModel(application: Application, searchListUseCase: SearchListUseCase) :
-    AndroidViewModel(application) {
+@HiltViewModel
+class SearchViewModel @Inject constructor(searchListUseCase: SearchListUseCase) : ViewModel() {
 
     val lastSearches = searchListUseCase.invoke().asLiveData()
 }
