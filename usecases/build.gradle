@@ -57,7 +57,4 @@ dependencies {
     testImplementation testDependencies.mockitoCore
     testImplementation testDependencies.mockitoKotlin
     testImplementation testDependencies.mockitoInline
-
-    //Retrofit
-    implementation generalDependencies.retrofit
 }
