@@ -6,18 +6,26 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 
-object ImageExtension {
+/**
+ * Function to load an Image from a URL
+ * @param url URL of image
+ * @param placeholder Local image as a placeholder
+ * @author Jaime Trujillo
+ */
+fun ImageView.loadUrl(url: String, @DrawableRes placeholder: Int) {
 
-    fun ImageView.loadUrl(urlString: String, @DrawableRes placeholder: Int) {
+    Glide.with(context)
+        .load(url)
+        .diskCacheStrategy(DiskCacheStrategy.DATA)
+        .placeholder(placeholder)
+        .into(this)
+}
 
-        Glide.with(context)
-            .load(urlString)
-            .diskCacheStrategy(DiskCacheStrategy.DATA)
-            .placeholder(placeholder)
-            .into(this)
-    }
-
-    fun ImageView.loadDrawable(@DrawableRes drawableRes: Int) {
-        setImageDrawable(ContextCompat.getDrawable(context, drawableRes))
-    }
+/**
+ * Function to load an Image from a Drawable
+ * @param drawableRes Local image as a placeholder
+ * @author Jaime Trujillo
+ */
+fun ImageView.loadDrawable(@DrawableRes drawableRes: Int) {
+    setImageDrawable(ContextCompat.getDrawable(context, drawableRes))
 }

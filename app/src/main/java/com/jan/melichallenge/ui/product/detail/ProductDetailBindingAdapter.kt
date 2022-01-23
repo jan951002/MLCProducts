@@ -6,8 +6,8 @@ import androidx.databinding.BindingAdapter
 import com.jan.melichallenge.R
 import com.jan.melichallenge.domain.Attribute
 import com.jan.melichallenge.domain.Product
-import com.jan.melichallenge.imagemanager.ImageExtension.loadUrl
-import com.jan.melichallenge.textmanager.TextExtension.formatPrice
+import com.jan.melichallenge.imagemanager.loadUrl
+import com.jan.melichallenge.textmanager.formatPrice
 
 @BindingAdapter("productDetailImage")
 fun ImageView.setProductDetailImage(product: Product) {

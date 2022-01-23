@@ -5,6 +5,10 @@ import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
+/**
+ *  Entity to represent a search
+ *  @author Jaime Trujillo
+ */
 @Entity(tableName = "searches", indices = [Index(value = ["query"], unique = true)])
 data class Search(
     val query: String,
