@@ -29,6 +29,10 @@ data class Product(
     val thumbnailId: String?,
     val title: String?,
     val useThumbnailId: Boolean
-) : Serializable
+) : Serializable {
+    companion object {
+        private const val serialVersionUID = 0L
+    }
+}
 
 typealias ProductSerializable = Product

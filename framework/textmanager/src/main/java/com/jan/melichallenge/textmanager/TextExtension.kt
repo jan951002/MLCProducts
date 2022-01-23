@@ -12,8 +12,9 @@ private const val PATTERN_PRICE = "#,###"
  * @param fontAssetName Name of the asset
  * @author Jaime Trujillo
  */
-fun Context.fontFromAsset(fontAssetName: String): Typeface? =
-    Typeface.createFromAsset(assets, fontAssetName)
+fun Context.fontFromAsset(fontAssetName: String): Typeface? = Typeface.createFromAsset(
+    assets, fontAssetName
+)
 
 /**
  * Function to clear the focus of an EditText
