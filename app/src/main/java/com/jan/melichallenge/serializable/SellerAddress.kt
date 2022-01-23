@@ -12,6 +12,10 @@ data class SellerAddress(
     val longitude: String,
     val state: Location,
     val zipCode: String
-) : Serializable
+) : Serializable {
+    companion object {
+        private const val serialVersionUID = 0L
+    }
+}
 
 typealias SellerAddressSerializable = SellerAddress

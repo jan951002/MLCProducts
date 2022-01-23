@@ -10,6 +10,10 @@ data class Seller(
     val registrationDate: String?,
     val sellerReputation: SellerReputation?,
     val tags: List<String>?
-) : Serializable
+) : Serializable {
+    companion object {
+        private const val serialVersionUID = 0L
+    }
+}
 
 typealias SellerSerializable = Seller

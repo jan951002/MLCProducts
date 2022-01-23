@@ -10,6 +10,10 @@ data class Attribute(
     val source: Long,
     val valueId: String?,
     val valueName: String?,
-) : Serializable
+) : Serializable {
+    companion object {
+        private const val serialVersionUID = 0L
+    }
+}
 
 typealias AttributeSerializable = Attribute

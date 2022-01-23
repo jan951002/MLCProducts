@@ -11,13 +11,10 @@ import android.net.NetworkCapabilities
 fun Context.isOnline(): Boolean {
     val connectivityManager =
         getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    val network = connectivityManager.activeNetwork ?: return false
-    val networkCapabilities =
-        connectivityManager.getNetworkCapabilities(network) ?: return false
-    return when {
-        networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-        networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
-        networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
-        else -> false
-    }
+    val network = connectivityManager.activeNetwork
+    val networkCapabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+
+    return networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
 }

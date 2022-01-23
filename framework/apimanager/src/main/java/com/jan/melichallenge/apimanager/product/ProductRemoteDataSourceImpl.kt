@@ -20,11 +20,9 @@ class ProductRemoteDataSourceImpl(private val meliApiServices: MeliApiServices) 
             it.toProductDomain()
         }
         Result.Success(result)
-    } catch (throwable: Throwable) {
-        if (throwable is HttpException)
-            Result.Failure(NetworkError(throwable.response()?.errorBody()?.stringSuspending()))
-        else
-            Result.Failure(UnknownError(throwable))
+    } catch (httpException: HttpException) {
+        Result.Failure(NetworkError(httpException.response()?.errorBody()?.stringSuspending()))
+    } catch (exception: Exception) {
+        Result.Failure(UnknownError(exception))
     }
-
 }

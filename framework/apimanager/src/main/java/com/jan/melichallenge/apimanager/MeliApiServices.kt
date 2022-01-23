@@ -11,6 +11,8 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
+private const val CLIENT_TIME_OUT = 60L
+
 /**
  *  This interface contains the MELI API endpoints
  *  @author Jaime Trujillo
@@ -28,8 +30,8 @@ interface MeliApiServices {
  *  @author Jaime Trujillo
  */
 fun createHttpClient(): OkHttpClient = OkHttpClient.Builder()
-    .readTimeout(60, TimeUnit.SECONDS)
-    .connectTimeout(60, TimeUnit.SECONDS)
+    .readTimeout(CLIENT_TIME_OUT, TimeUnit.SECONDS)
+    .connectTimeout(CLIENT_TIME_OUT, TimeUnit.SECONDS)
     .build()
 
 

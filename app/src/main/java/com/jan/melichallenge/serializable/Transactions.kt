@@ -8,6 +8,10 @@ data class Transactions(
     val period: String,
     val ratings: Rating,
     val total: Int
-) : Serializable
+) : Serializable {
+    companion object {
+        private const val serialVersionUID = 0L
+    }
+}
 
 typealias TransactionsSerializable = Transactions
