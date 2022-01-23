@@ -9,6 +9,7 @@
       <module name="MELIChallenge.framework.databasemanager" target="11" />
       <module name="MELIChallenge.framework.imagemanager" target="11" />
       <module name="MELIChallenge.framework.internetmanager" target="11" />
+      <module name="MELIChallenge.framework.testmanager" target="11" />
       <module name="MELIChallenge.framework.textmanager" target="11" />
       <module name="MELIChallenge.usecases" target="11" />
     </bytecodeTargetLevel>

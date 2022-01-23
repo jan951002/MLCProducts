@@ -1,15 +1,18 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
     id "io.gitlab.arturbosch.detekt"
 }
 
 android {
-    compileSdkVersion 31
+    compileSdk 31
 
     defaultConfig {
-        minSdkVersion 24
-        targetSdkVersion 31
+        minSdk 24
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -28,6 +31,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    lintOptions {
+        abortOnError false
+    }
+    kapt {
+        generateStubs = true
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -36,14 +46,18 @@ dependencies {
     def testDependencies = rootProject.ext.testDependencies
 
     implementation project(":domain")
-    implementation project(":data")
-    testImplementation project(":framework:testmanager")
 
     implementation generalDependencies.kotlin
+    implementation generalDependencies.kotlinReflect
     implementation generalDependencies.coreKtx
 
-    testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.androidTest
+    // test
+    implementation testDependencies.coreTesting
+    implementation testDependencies.coroutinesTest
+    implementation testDependencies.junit
+    implementation testDependencies.mockitoCore
+    implementation testDependencies.mockitoKotlin
+    implementation testDependencies.mockitoInline
 
     // Coroutines for asynchronous calls (and Deferred’s adapter)
     implementation generalDependencies.coroutines
@@ -51,12 +65,4 @@ dependencies {
     configurations {
         compile.exclude group: 'org.jetbrains.kotlinx', module: 'atomicfu-common'
     }
-
-    //test
-    androidTestImplementation testDependencies.androidTest
-    testImplementation testDependencies.coroutinesTest
-    testImplementation testDependencies.junit
-    testImplementation testDependencies.mockitoCore
-    testImplementation testDependencies.mockitoKotlin
-    testImplementation testDependencies.mockitoInline
 }
