@@ -41,11 +41,6 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
-    <style name="BottomDialogAnimation">
-        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
-        <item name="android:windowExitAnimation">@anim/slide_out_down</item>
-    </style>
-
     <style name="Theme.MILIChallenge.BackIconTint">
         <item name="android:tint">@color/gray34</item>
     </style>

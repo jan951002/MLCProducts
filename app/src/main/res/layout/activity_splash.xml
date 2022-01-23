@@ -10,7 +10,7 @@
         tools:context=".ui.splash.SplashActivity">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/splashImage"
             android:layout_width="@dimen/image_item"
             android:layout_height="@dimen/image_item"
             android:contentDescription="@string/app_name"
@@ -19,16 +19,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <com.jan.melichallenge.ui.custom.view.RobotoRegularTextView
-            android:id="@+id/robotoRegularTextView"
-            style="@style/Theme.MILIChallenge.TextTitleStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/item_horizontal_double_margin"
-            android:text="@string/lab_welcome"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
