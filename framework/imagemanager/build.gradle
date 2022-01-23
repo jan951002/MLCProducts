@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id "io.gitlab.arturbosch.detekt"
 }
 
 android {
@@ -48,7 +49,7 @@ dependencies {
 
     testImplementation testDependencies.junit
 
-    //Glide
+    // Glide
     implementation generalDependencies.glide
     kapt compilerDependencies.glide
 }

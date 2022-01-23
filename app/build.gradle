@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id "androidx.navigation.safeargs.kotlin"
+    id "io.gitlab.arturbosch.detekt"
 }
 
 android {
@@ -41,6 +42,9 @@ android {
     kapt {
         generateStubs = true
         correctErrorTypes = true
+    }
+    detekt {
+        baseline = file("$rootDir/detekt-baseline.xml")
     }
 }
 
@@ -112,4 +116,7 @@ dependencies {
     //Activity and fragment ktx
     implementation generalDependencies.activityKtx
     implementation generalDependencies.fragmentKtx
+
+    // Leak canary
+    debugImplementation generalDependencies.leakCanary
 }

@@ -51,7 +51,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
 
     fun findProducts(query: String) {
         productsViewModel.query = query
-        productsViewModel.viewModelScope.launch { productsViewModel.searchProducts(true, 0) }
+        productsViewModel.searchProducts(true, 0)
     }
 
     private fun configScroll() {
@@ -124,8 +124,8 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     }
 
     private fun onItemClick(product: Product) {
-        val direction =
-            ProductsFragmentDirections.actionNavProductsFragmentToNavProductDetailFragment(product.toProductParcelable())
+        val direction = ProductsFragmentDirections
+            .actionNavProductsFragmentToNavProductDetailFragment(product.toProductParcelable())
         navController.navigate(direction)
     }
 }

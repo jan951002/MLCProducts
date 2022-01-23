@@ -7,6 +7,10 @@ data class Installment(
     val currencyId: String,
     val quantity: Int,
     val rate: Double
-) : Serializable
+) : Serializable {
+    companion object {
+        private const val serialVersionUID = 0L
+    }
+}
 
 typealias InstallmentSerializable = Installment

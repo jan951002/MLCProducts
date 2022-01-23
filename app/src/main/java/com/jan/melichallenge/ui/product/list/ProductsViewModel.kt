@@ -43,35 +43,37 @@ class ProductsViewModel @Inject constructor(
         }
     }
 
-    suspend fun searchProducts(isNewQuery: Boolean = false, offset: Int) {
-        if (isNewQuery)
-            _searchState.value = LOADING
-        when (val result = productListUseCase.invoke(query, offset)) {
-            is Result.Success -> {
-                result.data?.let { productList ->
-                    if (isNewQuery) {
-                        if (productList.isNotEmpty()) {
-                            _searchState.value = SEARCHED
-                            saveSearchUseCase.invoke(query)
-                            _products.value = productList
+    fun searchProducts(isNewQuery: Boolean = false, offset: Int) {
+        viewModelScope.launch {
+            if (isNewQuery)
+                _searchState.value = LOADING
+            when (val result = productListUseCase.invoke(query, offset)) {
+                is Result.Success -> {
+                    result.data?.let { productList ->
+                        if (isNewQuery) {
+                            if (productList.isNotEmpty()) {
+                                _searchState.value = SEARCHED
+                                saveSearchUseCase.invoke(query)
+                                _products.value = productList
+                            } else {
+                                _searchState.value = NOT_FOUND
+                            }
                         } else {
-                            _searchState.value = NOT_FOUND
-                        }
-                    } else {
-                        products.value?.toMutableList()?.let { newList ->
-                            newList.addAll(productList)
-                            _products.value = newList.toList()
+                            products.value?.toMutableList()?.let { newList ->
+                                newList.addAll(productList)
+                                _products.value = newList.toList()
+                            }
                         }
                     }
                 }
-            }
 
-            is Result.Failure -> {
-                if (isNewQuery) {
-                    if (result.reason is Error.UnknownError)
-                        _searchState.value = GENERAL_ERROR
-                    else
-                        _searchState.value = NETWORK_ERROR
+                is Result.Failure -> {
+                    if (isNewQuery) {
+                        if (result.reason is Error.UnknownError)
+                            _searchState.value = GENERAL_ERROR
+                        else
+                            _searchState.value = NETWORK_ERROR
+                    }
                 }
             }
         }
