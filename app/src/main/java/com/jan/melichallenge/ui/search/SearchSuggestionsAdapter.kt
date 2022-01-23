@@ -3,8 +3,8 @@ package com.jan.melichallenge.ui.search
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.jan.melichallenge.adaptermanager.AdapterGeneric.basicDiffUtil
-import com.jan.melichallenge.adaptermanager.AdapterGeneric.inflate
+import com.jan.melichallenge.adaptermanager.basicDiffUtil
+import com.jan.melichallenge.adaptermanager.inflate
 import com.jan.melichallenge.databinding.ItemSearchSuggestionBinding
 import com.jan.melichallenge.domain.Search
 

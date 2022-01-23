@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import com.jan.melichallenge.R
 import com.jan.melichallenge.databinding.ActivitySearchBinding
 import com.jan.melichallenge.domain.Search
-import com.jan.melichallenge.textmanager.TextExtension.clearFocusAfterDone
+import com.jan.melichallenge.textmanager.clearFocusAfterDone
 import com.jan.melichallenge.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 

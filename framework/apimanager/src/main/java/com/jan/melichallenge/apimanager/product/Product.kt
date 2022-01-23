@@ -6,6 +6,10 @@ import com.jan.melichallenge.apimanager.installment.Installment
 import com.jan.melichallenge.apimanager.seller.Seller
 import com.jan.melichallenge.apimanager.seller.address.SellerAddress
 
+/**
+ *  Model to represent a product response
+ *  @author Jaime Trujillo
+ */
 data class Product(
     @SerializedName("accepts_mercadopago")
     val acceptsMercadopago: Boolean,
