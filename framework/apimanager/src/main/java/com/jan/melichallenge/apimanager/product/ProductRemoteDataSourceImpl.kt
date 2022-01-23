@@ -8,6 +8,10 @@ import com.jan.melichallenge.domain.Error.UnknownError
 import com.jan.melichallenge.domain.Result
 import retrofit2.HttpException
 
+/**
+ *  Class to implement ProductRemoteDataSource interface
+ *  @author Jaime Trujillo
+ */
 class ProductRemoteDataSourceImpl(private val meliApiServices: MeliApiServices) :
     ProductRemoteDataSource {
 

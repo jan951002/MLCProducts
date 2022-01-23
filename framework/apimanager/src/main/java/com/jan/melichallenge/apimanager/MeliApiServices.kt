@@ -11,6 +11,10 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
+/**
+ *  This interface contains the MELI API endpoints
+ *  @author Jaime Trujillo
+ */
 interface MeliApiServices {
 
     @GET("search")
@@ -21,6 +25,7 @@ interface MeliApiServices {
 
 /**
  *  Returns a custom OkHttpClient instance with interceptor. Used for building Retrofit service
+ *  @author Jaime Trujillo
  */
 fun createHttpClient(): OkHttpClient = OkHttpClient.Builder()
     .readTimeout(60, TimeUnit.SECONDS)
@@ -31,6 +36,7 @@ fun createHttpClient(): OkHttpClient = OkHttpClient.Builder()
 /**
  *  function to build our Retrofit service
  *  @param baseUrl
+ *  @author Jaime Trujillo
  */
 inline fun <reified T> createWebService(baseUrl: String): T {
     val retrofit = Retrofit.Builder()

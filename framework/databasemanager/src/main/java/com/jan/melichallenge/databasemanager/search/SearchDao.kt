@@ -6,6 +6,10 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
+/**
+ *  This contains the query operations for search entity using room library
+ *  @author Jaime Trujillo
+ */
 @Dao
 interface SearchDao {
 
