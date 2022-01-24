@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>MaxLineLength:ProductsFragment.kt$ProductsFragment$ProductsFragmentDirections.actionNavProductsFragmentToNavProductDetailFragment(product.toProductParcelable())</ID>
+    <ID>NestedBlockDepth:ProductsViewModel.kt$ProductsViewModel$suspend fun searchProducts(isNewQuery: Boolean = false, offset: Int)</ID>
+    <ID>NewLineAtEndOfFile:AppModule.kt$com.jan.melichallenge.di.AppModule.kt</ID>
+    <ID>NewLineAtEndOfFile:Attribute.kt$com.jan.melichallenge.serializable.Attribute.kt</ID>
+    <ID>NewLineAtEndOfFile:AttributeMapper.kt$com.jan.melichallenge.mapper.AttributeMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:AttributesAdapter.kt$com.jan.melichallenge.ui.product.detail.AttributesAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseActivity.kt$com.jan.melichallenge.ui.base.BaseActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseFragment.kt$com.jan.melichallenge.ui.base.BaseFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.jan.melichallenge.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:Installment.kt$com.jan.melichallenge.serializable.Installment.kt</ID>
+    <ID>NewLineAtEndOfFile:InstallmentMapper.kt$com.jan.melichallenge.mapper.InstallmentMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:Location.kt$com.jan.melichallenge.serializable.Location.kt</ID>
+    <ID>NewLineAtEndOfFile:LocationMapper.kt$com.jan.melichallenge.mapper.LocationMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:MELIChallengeApplication.kt$com.jan.melichallenge.MELIChallengeApplication.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$com.jan.melichallenge.ui.main.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:Product.kt$com.jan.melichallenge.serializable.Product.kt</ID>
+    <ID>NewLineAtEndOfFile:ProductDI.kt$com.jan.melichallenge.ui.product.ProductDI.kt</ID>
+    <ID>NewLineAtEndOfFile:ProductDataModule.kt$com.jan.melichallenge.di.ProductDataModule.kt</ID>
+    <ID>NewLineAtEndOfFile:ProductDetailBindingAdapter.kt$com.jan.melichallenge.ui.product.detail.ProductDetailBindingAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:ProductDetailFragment.kt$com.jan.melichallenge.ui.product.detail.ProductDetailFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ProductMapper.kt$com.jan.melichallenge.mapper.ProductMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:ProductsAdapter.kt$com.jan.melichallenge.ui.product.list.ProductsAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:ProductsFragment.kt$com.jan.melichallenge.ui.product.list.ProductsFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ProductsViewModel.kt$com.jan.melichallenge.ui.product.list.ProductsViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:Rating.kt$com.jan.melichallenge.serializable.Rating.kt</ID>
+    <ID>NewLineAtEndOfFile:RatingMapper.kt$com.jan.melichallenge.mapper.RatingMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:RobotoRegularTextView.kt$com.jan.melichallenge.ui.custom.view.RobotoRegularTextView.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchActivity.kt$com.jan.melichallenge.ui.search.SearchActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchDI.kt$com.jan.melichallenge.ui.search.SearchDI.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchDataModule.kt$com.jan.melichallenge.di.SearchDataModule.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchViewModel.kt$com.jan.melichallenge.ui.search.SearchViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:Seller.kt$com.jan.melichallenge.serializable.Seller.kt</ID>
+    <ID>NewLineAtEndOfFile:SellerAddress.kt$com.jan.melichallenge.serializable.SellerAddress.kt</ID>
+    <ID>NewLineAtEndOfFile:SellerAddressMapper.kt$com.jan.melichallenge.mapper.SellerAddressMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:SellerMapper.kt$com.jan.melichallenge.mapper.SellerMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:SellerReputation.kt$com.jan.melichallenge.serializable.SellerReputation.kt</ID>
+    <ID>NewLineAtEndOfFile:SellerReputationMapper.kt$com.jan.melichallenge.mapper.SellerReputationMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:SplashActivity.kt$com.jan.melichallenge.ui.splash.SplashActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:Transactions.kt$com.jan.melichallenge.serializable.Transactions.kt</ID>
+    <ID>NewLineAtEndOfFile:TransactionsMapper.kt$com.jan.melichallenge.mapper.TransactionsMapper.kt</ID>
+    <ID>SerialVersionUIDInSerializableClass:Attribute.kt$Attribute : Serializable</ID>
+    <ID>SerialVersionUIDInSerializableClass:Installment.kt$Installment : Serializable</ID>
+    <ID>SerialVersionUIDInSerializableClass:Location.kt$Location : Serializable</ID>
+    <ID>SerialVersionUIDInSerializableClass:Product.kt$Product : Serializable</ID>
+    <ID>SerialVersionUIDInSerializableClass:Rating.kt$Rating : Serializable</ID>
+    <ID>SerialVersionUIDInSerializableClass:Seller.kt$Seller : Serializable</ID>
+    <ID>SerialVersionUIDInSerializableClass:SellerAddress.kt$SellerAddress : Serializable</ID>
+    <ID>SerialVersionUIDInSerializableClass:SellerReputation.kt$SellerReputation : Serializable</ID>
+    <ID>SerialVersionUIDInSerializableClass:Transactions.kt$Transactions : Serializable</ID>
+  </CurrentIssues>
+</SmellBaseline>
