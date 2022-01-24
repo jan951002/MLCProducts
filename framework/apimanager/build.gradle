@@ -37,12 +37,10 @@ dependencies {
 
     implementation project(":domain")
     implementation project(":data")
+    testImplementation project(":framework:testmanager")
 
     implementation generalDependencies.kotlin
     implementation generalDependencies.coreKtx
-
-    testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.androidTest
 
     // Coroutines for asynchronous calls (and Deferred’s adapter)
     implementation generalDependencies.coroutines
@@ -51,13 +49,20 @@ dependencies {
         compile.exclude group: 'org.jetbrains.kotlinx', module: 'atomicfu-common'
     }
 
-    //Retrofit
+    // Retrofit
     implementation generalDependencies.retrofit
     implementation generalDependencies.retrofitRxjava
     implementation generalDependencies.retrofitGson
     implementation generalDependencies.retrofitCoroutines
 
-    //OkHTTP
+    // OkHTTP
     implementation generalDependencies.okhttp
     implementation generalDependencies.okhttpInterceptor
+
+    // test
+    testImplementation testDependencies.coroutinesTest
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.mockitoCore
+    testImplementation testDependencies.mockitoKotlin
+    testImplementation testDependencies.mockitoInline
 }

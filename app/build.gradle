@@ -61,6 +61,7 @@ dependencies {
     implementation project(":framework:databasemanager")
     implementation project(":framework:imagemanager")
     implementation project(":framework:internetmanager")
+    testImplementation project(":framework:testmanager")
     implementation project(":framework:textmanager")
     implementation project(":usecases")
 
@@ -71,16 +72,6 @@ dependencies {
     implementation generalDependencies.material
     implementation generalDependencies.constraintlayout
     implementation generalDependencies.legacySupport
-
-    //test
-    androidTestImplementation testDependencies.androidTest
-    testImplementation testDependencies.coreTesting
-    testImplementation testDependencies.coroutinesTest
-    androidTestImplementation testDependencies.espresso
-    testImplementation testDependencies.junit
-    testImplementation testDependencies.mockitoCore
-    testImplementation testDependencies.mockitoKotlin
-    testImplementation testDependencies.mockitoInline
 
     //Navigation
     implementation generalDependencies.navigationFragment
@@ -119,4 +110,12 @@ dependencies {
 
     // Leak canary
     debugImplementation generalDependencies.leakCanary
+
+    // test
+    testImplementation testDependencies.coreTesting
+    testImplementation testDependencies.coroutinesTest
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.mockitoCore
+    testImplementation testDependencies.mockitoKotlin
+    testImplementation testDependencies.mockitoInline
 }

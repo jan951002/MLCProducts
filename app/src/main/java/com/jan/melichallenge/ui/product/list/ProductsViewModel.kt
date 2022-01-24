@@ -7,6 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.jan.melichallenge.domain.Error
 import com.jan.melichallenge.domain.Product
 import com.jan.melichallenge.domain.Result
+import com.jan.melichallenge.ui.product.list.SearchProductsState.GENERAL_ERROR
+import com.jan.melichallenge.ui.product.list.SearchProductsState.LOADING
+import com.jan.melichallenge.ui.product.list.SearchProductsState.NEW_SEARCH
+import com.jan.melichallenge.ui.product.list.SearchProductsState.NETWORK_ERROR
+import com.jan.melichallenge.ui.product.list.SearchProductsState.NOT_FOUND
+import com.jan.melichallenge.ui.product.list.SearchProductsState.SEARCHED
 import com.jan.melichallenge.usecases.product.ProductListUseCase
 import com.jan.melichallenge.usecases.search.SaveSearchUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -21,20 +27,11 @@ class ProductsViewModel @Inject constructor(
     private val saveSearchUseCase: SaveSearchUseCase
 ) : ViewModel() {
 
-    companion object {
-        const val NEW_SEARCH = 0
-        const val SEARCHED = 1
-        const val NOT_FOUND = 2
-        const val GENERAL_ERROR = 3
-        const val NETWORK_ERROR = 4
-        const val LOADING = 5
-    }
-
     var query = ""
     private val _products = MutableLiveData<List<Product>>()
     val products: LiveData<List<Product>> get() = _products
-    private val _searchState = MutableLiveData<Int>().apply { value = NEW_SEARCH }
-    val searchState: LiveData<Int> get() = _searchState
+    private val _searchState = MutableLiveData<SearchProductsState>().apply { value = NEW_SEARCH }
+    val searchState: LiveData<SearchProductsState> get() = _searchState
     val offset = MutableStateFlow(0)
 
     init {
