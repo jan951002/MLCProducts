@@ -32,15 +32,6 @@
 
     <style name="Theme.MILIChallenge.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="ThemeTransparent" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowIsTranslucent">false</item>
-        <item name="android:windowBackground">@color/white</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:backgroundDimEnabled">true</item>
-    </style>
-
     <style name="Theme.MILIChallenge.BackIconTint">
         <item name="android:tint">@color/gray34</item>
     </style>
