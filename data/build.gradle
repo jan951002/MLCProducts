@@ -36,12 +36,10 @@ dependencies {
     def testDependencies = rootProject.ext.testDependencies
 
     implementation project(":domain")
+    testImplementation project(":framework:testmanager")
 
     implementation generalDependencies.kotlin
     implementation generalDependencies.coreKtx
-
-    testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.androidTest
 
     // Coroutines for asynchronous calls (and Deferred’s adapter)
     implementation generalDependencies.coroutines
@@ -49,4 +47,11 @@ dependencies {
     configurations {
         compile.exclude group: 'org.jetbrains.kotlinx', module: 'atomicfu-common'
     }
+
+    // test
+    testImplementation testDependencies.coroutinesTest
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.mockitoCore
+    testImplementation testDependencies.mockitoKotlin
+    testImplementation testDependencies.mockitoInline
 }

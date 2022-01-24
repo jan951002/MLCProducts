@@ -3,7 +3,6 @@ package com.jan.melichallenge.ui.product.list
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
@@ -16,8 +15,13 @@ import com.jan.melichallenge.internetmanager.isOnline
 import com.jan.melichallenge.mapper.toProductParcelable
 import com.jan.melichallenge.ui.base.BaseFragment
 import com.jan.melichallenge.ui.main.MainActivity
+import com.jan.melichallenge.ui.product.list.SearchProductsState.GENERAL_ERROR
+import com.jan.melichallenge.ui.product.list.SearchProductsState.LOADING
+import com.jan.melichallenge.ui.product.list.SearchProductsState.NEW_SEARCH
+import com.jan.melichallenge.ui.product.list.SearchProductsState.NETWORK_ERROR
+import com.jan.melichallenge.ui.product.list.SearchProductsState.NOT_FOUND
+import com.jan.melichallenge.ui.product.list.SearchProductsState.SEARCHED
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate) {
@@ -69,9 +73,9 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
         })
     }
 
-    private fun configVisible(searchState: Int) {
+    private fun configVisible(searchState: SearchProductsState) {
         when (searchState) {
-            ProductsViewModel.NEW_SEARCH -> {
+            NEW_SEARCH -> {
                 binding.productsSearchState.searchStateImage.loadDrawable(R.drawable.ic_binoculars)
                 binding.productsSearchState.searchStateText.text =
                     getString(R.string.lab_search_suggestion)
@@ -79,12 +83,12 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
-            ProductsViewModel.SEARCHED -> {
+            SEARCHED -> {
                 binding.productsRecycler.visibility = View.VISIBLE
                 binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.GONE
             }
-            ProductsViewModel.NOT_FOUND -> {
+            NOT_FOUND -> {
                 binding.productsSearchState.searchStateImage.loadDrawable(R.drawable.ic_not_found)
                 binding.productsSearchState.searchStateText.text =
                     getString(R.string.lab_search_not_found)
@@ -92,7 +96,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
-            ProductsViewModel.GENERAL_ERROR -> {
+            GENERAL_ERROR -> {
                 binding.productsSearchState.searchStateImage.loadDrawable(R.drawable.ic_error)
                 binding.productsSearchState.searchStateText.text =
                     if (requireContext().isOnline())
@@ -103,7 +107,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
-            ProductsViewModel.NETWORK_ERROR -> {
+            NETWORK_ERROR -> {
                 binding.productsSearchState.searchStateImage.loadDrawable(R.drawable.ic_error)
                 binding.productsSearchState.searchStateText.text =
                     if (requireContext().isOnline())
@@ -115,7 +119,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.loadingSpinKit.visibility = View.GONE
                 binding.productsSearchState.root.visibility = View.VISIBLE
             }
-            ProductsViewModel.LOADING -> {
+            LOADING -> {
                 binding.productsRecycler.visibility = View.GONE
                 binding.loadingSpinKit.visibility = View.VISIBLE
                 binding.productsSearchState.root.visibility = View.GONE

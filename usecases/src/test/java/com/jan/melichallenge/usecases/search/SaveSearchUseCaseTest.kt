@@ -4,7 +4,7 @@ import com.jan.melichallenge.testmanager.MainCoroutineRule
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -25,7 +25,7 @@ class SaveSearchUseCaseTest {
     private lateinit var saveSearchUseCase: SaveSearchUseCase
 
     @Test
-    fun `verify save search`() = runBlocking {
+    fun `verify save search`() = runBlockingTest {
         saveSearchUseCase.invoke(TEST_SAVE_QUERY_VALUE)
         verify(saveSearchUseCase, times(SAVE_NUM_INVOCATIONS)).invoke(TEST_SAVE_QUERY_VALUE)
     }

@@ -42,9 +42,6 @@ dependencies {
     implementation generalDependencies.kotlin
     implementation generalDependencies.coreKtx
 
-    testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.androidTest
-
     // Coroutines for asynchronous calls (and Deferred’s adapter)
     implementation generalDependencies.coroutines
     implementation generalDependencies.coroutinesAndroid
@@ -52,8 +49,7 @@ dependencies {
         compile.exclude group: 'org.jetbrains.kotlinx', module: 'atomicfu-common'
     }
 
-    //test
-    androidTestImplementation testDependencies.androidTest
+    // test
     testImplementation testDependencies.coroutinesTest
     testImplementation testDependencies.junit
     testImplementation testDependencies.mockitoCore
